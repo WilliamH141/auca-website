@@ -15,14 +15,14 @@ export function Section({ eyebrow, title, description, actionHref, actionLabel, 
     <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-0">
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl space-y-2">
-          {eyebrow && <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">{eyebrow}</p>}
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{title}</h2>
+          {eyebrow && <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600">{eyebrow}</p>}
+          <h2 className="font-serif text-3xl font-bold text-slate-900 sm:text-4xl">{title}</h2>
           {description && <p className="text-base text-slate-600">{description}</p>}
         </div>
         {actionHref && actionLabel && (
           <Link
             href={actionHref}
-            className="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500"
+            className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-500"
           >
             {actionLabel}
           </Link>
