@@ -13,27 +13,27 @@ const navLinks = [
 ];
 
 const buttonClass =
-  "inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400";
+  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400";
 
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const linkClass = (href: string) =>
-    `text-sm font-medium transition hover:text-sky-600 ${
-      pathname === href ? "text-sky-700" : "text-slate-600"
-    }`;
+    `relative text-base font-medium text-slate-700 transition-colors hover:text-sky-700 ${
+      pathname === href ? "text-slate-900 after:w-full" : ""
+    } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-sky-500 after:to-sky-700 after:transition-all after:duration-300 hover:after:w-full`;
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 md:px-6 lg:px-0">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-gradient-to-b from-white/95 to-white/80 backdrop-blur shadow-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-6 md:px-6 lg:px-0">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-600 text-white shadow-lg">
-            <span className="text-lg font-bold">AU</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-600 text-white shadow-lg">
+            <span className="text-xl font-bold">AU</span>
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-base font-semibold text-slate-900">AUCA</span>
-            <span className="text-xs text-slate-600">Chess Association</span>
+            <span className="text-lg font-semibold text-slate-900">AUCA</span>
+            <span className="text-sm text-slate-600">Chess Association</span>
           </div>
         </Link>
 
@@ -57,7 +57,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow md:hidden"
+          className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow md:hidden"
         >
           <span className="sr-only">Toggle navigation</span>
           <svg
