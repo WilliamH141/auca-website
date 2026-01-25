@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auckland University Chess Association (AUCA) website
 
-## Getting Started
+Static Next.js site (App Router, TypeScript, Tailwind CSS) for the AUCA club. Content is kept in simple files so committee members can edit without a CMS.
 
-First, run the development server:
+## Run locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1) Install dependencies: `npm install`
+2) Start dev server: `npm run dev`
+3) Visit http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy (Vercel)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1) Create a new Vercel project and link this repo.
+2) Framework preset: Next.js. No extra build settings needed.
+3) Deploy. Production URL will match `metadataBase` in `app/layout.tsx` (update it if your domain differs).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editing content
 
-## Learn More
+- Events: edit `src/content/events.ts` (title, date, time, location, description, addToCalendarUrl).
+- Committee: edit `src/content/team.ts` (name, role, bio).
+- Social links and email: update `app/components/Footer.tsx` and relevant links in `app/contact/page.tsx` and `app/join/page.tsx`.
+- Hero image: replace the URL passed to `backgroundImage` in `app/page.tsx` or drop a file into `public/hero.jpg` and change the value to `/hero.jpg`.
+- Metadata: per-page titles/descriptions live beside each page component.
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` Home: hero, what we do, upcoming events preview, contact teaser.
+- `/about` About the club and pillars.
+- `/team` Committee list from `src/content/team.ts`.
+- `/events` Full event list from `src/content/events.ts`.
+- `/join` Joining steps, membership link placeholder, Discord/Instagram.
+- `/contact` Contact form UI (no backend) plus email and socials.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech stack
 
-## Deploy on Vercel
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4 (inline config)
+- No database, no auth; fully static content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Replace placeholder links (`#`) for membership and calendar exports when ready.
+- If you add remote images to the hero or cards, prefer optimized sizes; current hero uses an Unsplash placeholder.
