@@ -14,7 +14,7 @@ export default function Home() {
         subtitle="Casual sessions, tournaments, and a friendly community that meets weekly on campus. Join us whether you are learning your first opening or prepping for your next big match."
         primaryCta={{ label: "Join AUCA", href: "/join" }}
         secondaryCta={{ label: "View Events", href: "/events" }}
-        backgroundImage="https://images.unsplash.com/photo-1545420331-64c2da62801e?auto=format&fit=crop&w=1600&q=80"
+        backgroundImage="url('/hero.jpg')"
       />
 
       <Section
