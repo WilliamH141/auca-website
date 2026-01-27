@@ -3,7 +3,7 @@ import Link from "next/link";
 const socials = [
   { label: "Instagram", href: "https://instagram.com/uoachessassociation" },
   { label: "Discord", href: "https://discord.gg/eMEKFnefNM" },
-  { label: "Email", href: "mailto:contact@auca.nz" },
+  { label: "Email", href: "mailto:aucklandunichess@gmail.com" },
 ];
 
 export function Footer() {

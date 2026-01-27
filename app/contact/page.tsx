@@ -55,7 +55,7 @@ export default function ContactPage() {
         <div className="space-y-4 rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm">
           <div>
             <p className="text-sm font-semibold text-slate-900">Email</p>
-            <p className="text-sm text-slate-700">contact@auca.nz</p>
+            <p className="text-sm text-slate-700">aucklandunichess@gmail.com</p>
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-900">Socials</p>

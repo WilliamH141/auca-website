@@ -49,7 +49,7 @@ export default function JoinPage() {
       </div>
       <div className="mt-8 rounded-2xl border border-slate-200 bg-white/80 p-6 text-sm text-slate-700 shadow-sm">
         <p className="font-semibold text-slate-900">Concession and accessibility</p>
-        <p className="mt-2">If membership cost is a barrier, email contact@auca.nz and we will sort out a concession or sponsorship. Everyone is welcome.</p>
+        <p className="mt-2">If membership cost is a barrier, email aucklandunichess@gmail.com and we will sort out a concession or sponsorship. Everyone is welcome.</p>
       </div>
     </Section>
   );

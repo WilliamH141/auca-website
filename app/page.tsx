@@ -87,7 +87,7 @@ export default function Home() {
         <div className="glass-panel flex flex-col gap-4 rounded-2xl p-6">
           <div className="flex flex-col gap-2 text-slate-700 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-lg font-semibold text-slate-900">contact@auca.nz</p>
+              <p className="text-lg font-semibold text-slate-900">aucklandunichess@gmail.com</p>
               <p className="text-sm text-slate-600">We usually reply within a day during semester.</p>
             </div>
             <div className="flex gap-3 text-sm font-medium text-slate-700">

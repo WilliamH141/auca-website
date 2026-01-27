@@ -18,7 +18,7 @@ export default function TeamPage() {
       <div className="grid gap-6 md:grid-cols-2">
         {team.map((member) => (
           <Card key={member.name} title={member.name} description={member.bio} meta={member.role}>
-            <div className="text-sm text-slate-600">Contact: contact@auca.nz</div>
+            <div className="text-sm text-slate-600">Contact: aucklandunichess@gmail.com</div>
           </Card>
         ))}
       </div>
