@@ -60,10 +60,10 @@ export default function ContactPage() {
           <div>
             <p className="text-sm font-semibold text-slate-900">Socials</p>
             <div className="mt-2 flex flex-col gap-2 text-sm font-medium text-slate-700">
-              <Link href="https://discord.gg/example" className="transition hover:text-sky-700">
+              <Link href="https://discord.gg/eMEKFnefNM" className="transition hover:text-sky-700">
                 Discord
               </Link>
-              <Link href="https://instagram.com/auca" className="transition hover:text-sky-700">
+              <Link href="https://instagram.com/uoachessassociation" className="transition hover:text-sky-700">
                 Instagram
               </Link>
             </div>

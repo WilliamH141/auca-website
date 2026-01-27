@@ -17,12 +17,12 @@ const steps = [
   {
     title: "Join Discord",
     description: "Get event reminders, find a playing partner, and share games for feedback.",
-    action: { label: "Discord", href: "https://discord.gg/example" },
+    action: { label: "Discord", href: "https://discord.gg/eMEKFnefNM" },
   },
   {
     title: "Follow Instagram",
     description: "See photos from tournaments and get quick updates about room changes.",
-    action: { label: "Instagram", href: "https://instagram.com/auca" },
+    action: { label: "Instagram", href: "https://instagram.com/uoachessassociation" },
   },
 ];
 

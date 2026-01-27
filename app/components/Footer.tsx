@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const socials = [
-  { label: "Instagram", href: "https://instagram.com/auca" },
-  { label: "Discord", href: "https://discord.gg/example" },
+  { label: "Instagram", href: "https://instagram.com/uoachessassociation" },
+  { label: "Discord", href: "https://discord.gg/eMEKFnefNM" },
   { label: "Email", href: "mailto:contact@auca.nz" },
 ];
 
