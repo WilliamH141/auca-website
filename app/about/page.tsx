@@ -14,7 +14,7 @@ const pillars = [
   },
   {
     title: "Student-led and simple",
-    description: "Run by volunteers who balance study and play. We keep fees low and communication clear so anyone can join.",
+    description: "Run by volunteers who balance study and play. Membership and events are completely free—no hidden costs or barriers.",
   },
   {
     title: "Growth and wellbeing",

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Become a member",
-    description: "Sign up through the UoA clubs portal. Membership keeps events funded and lets us book rooms.",
+    description: "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay connected.",
     action: { label: "Membership link", href: "#" },
   },
   {
@@ -31,7 +31,7 @@ export default function JoinPage() {
     <Section
       eyebrow="Join AUCA"
       title="Ready to play?"
-      description="Membership helps us cover boards, clocks, and snacks. Most events stay free thanks to your support."
+      description="Membership and all events are completely free. Join anytime—no fees, no catch."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {steps.map((step) => (
@@ -48,8 +48,8 @@ export default function JoinPage() {
         ))}
       </div>
       <div className="mt-8 rounded-2xl border border-slate-200 bg-white/80 p-6 text-sm text-slate-700 shadow-sm">
-        <p className="font-semibold text-slate-900">Concession and accessibility</p>
-        <p className="mt-2">If membership cost is a barrier, email aucklandunichess@gmail.com and we will sort out a concession or sponsorship. Everyone is welcome.</p>
+        <p className="font-semibold text-slate-900">Accessibility and support</p>
+        <p className="mt-2">Questions about joining? Email aucklandunichess@gmail.com or message us on Discord. We're here to help you get started—no barriers, no cost.</p>
       </div>
     </Section>
   );

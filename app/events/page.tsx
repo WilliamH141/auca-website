@@ -14,7 +14,7 @@ export default function EventsPage() {
     <Section
       eyebrow="Events"
       title="See you at the next session"
-      description="All events are free for members unless noted. Times and rooms may shift slightly during semester breaks—check Discord for latest updates."
+      description="All events are completely free. Times and rooms may shift slightly during the semester––check our social media for latest updates."
     >
       <div className="grid gap-6 md:grid-cols-2">
         {events.map((event) => (
