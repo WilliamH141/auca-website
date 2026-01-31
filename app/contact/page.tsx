@@ -66,6 +66,9 @@ export default function ContactPage() {
               <Link href="https://instagram.com/uoachessassociation" className="transition hover:text-sky-700">
                 Instagram
               </Link>
+                <Link href="https://www.facebook.com/aucklandunichess/" className="transition hover:text-sky-700">
+                Facebook
+              </Link>
             </div>
           </div>
           <div>
