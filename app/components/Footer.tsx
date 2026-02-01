@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const socials = [
   { label: "Instagram", href: "https://instagram.com/uoachessassociation", icon: "instagram" },
-  { label: "Discord", href: "https://discord.gg/eMEKFnefNM", icon: "discord" },
+  { label: "Discord", href: "https://discord.gg/gA7Kudmfa2", icon: "discord" },
   { label: "Facebook", href: "https://www.facebook.com/aucklandunichess/", icon: "facebook" },
   { label: "Email", href: "mailto:aucklandunichess@gmail.com", icon: "email" },
 ];

@@ -17,7 +17,7 @@ const steps = [
   {
     title: "Join Discord",
     description: "Get event reminders, find a playing partner, and share games for feedback.",
-    action: { label: "Discord", href: "https://discord.gg/eMEKFnefNM" },
+    action: { label: "Discord", href: "https://discord.gg/gA7Kudmfa2" },
   },
   {
     title: "Follow Instagram",
