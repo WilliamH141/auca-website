@@ -23,11 +23,11 @@ export default function SponsorsPage() {
         {/* sponsors */}
         <div className="flex flex-wrap items-center justify-center gap-12">
           {sponsors.map((sponsor) => (
-            <div key={sponsor.name} className="h-20 w-48 flex items-center justify-center">
+            <div key={sponsor.name} className="h-32 w-64 flex items-center justify-center">
               <img 
                 src={sponsor.logo} 
                 alt={sponsor.name} 
-                className="max-h-20 max-w-full object-contain"
+                className="max-h-32 max-w-full object-contain"
               />
             </div>
           ))}
