@@ -16,16 +16,19 @@ export const team: CommitteeMember[] = [
     name: "Joshua Little",
     role: "Vice President, Secretary & Engagement Officer",
     bio: "Coordinates weekly sessions, handles communications, and keeps the community engaged.",
+    image: "team/josh.png"
   },
   {
     name: "Allen Li",
     role: "Vice President & Treasurer",
     bio: "Manages funding, equipment, and ensures resources are ready for every event.",
+    image: "team/allen.png"
   },
   {
     name: "Kazmaire Bautista",
     role: "Marketing Lead",
     bio: "Drives club promotion, social media strategy, and brand visibility across campus.",
+    image: "team/kaz.png"
   },
   
   // events Executives
@@ -55,6 +58,7 @@ export const team: CommitteeMember[] = [
     name: "Eden Li",
     role: "Marketing Executive",
     bio: "Designs promotional materials and supports outreach campaigns across campus.",
+    image: "team/eden.png"
   },
   {
     name: "Ernest Nel",
@@ -67,6 +71,7 @@ export const team: CommitteeMember[] = [
     name: "William Huang",
     role: "General Executive",
     bio: "Supports club operations and contributes to various initiatives across the team.",
+    image: "team/william.png"
   },
   {
     name: "Felix Xie",
