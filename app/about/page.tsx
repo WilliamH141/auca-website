@@ -49,7 +49,7 @@ export default function AboutPage() {
           />
           <Card
             title="Learning and resources"
-            description="Opening prep, tactics puzzles, and post-game analysis shared in ow r. We plan short workshops each term."
+            description="Opening prep, tactics puzzles, and post-game analysis shared in our Discord. We plan short workshops each term."
           />
           <Card
             title="Friendly tournaments"

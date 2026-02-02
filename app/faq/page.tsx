@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "../components/Section";
 
 export const metadata: Metadata = {
@@ -6,10 +7,20 @@ export const metadata: Metadata = {
   description: "Frequently asked questions about the Auckland University Chess Association.",
 };
 
+const membershipFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform";
+
 const faqs = [
   {
     question: "Is membership free?",
-    answer: "Absolutely! Membership and all our events are completely free. No hidden costs or surprises.",
+    answer: (
+      <>
+        Absolutely! Membership and all our events are completely free. No hidden costs or surprises.{" "}
+        <a href={membershipFormUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-700" style={{ textDecoration: 'underline' }}>
+          Sign up here
+        </a>
+        .
+      </>
+    ),
   },
   {
     question: "Do I need to be good at chess?",
@@ -21,7 +32,15 @@ const faqs = [
   },
   {
     question: "How do I join?",
-    answer: "It's easy! Sign up through the UoA Clubs portal, then jump into our Discord. That's it—you're in.",
+    answer: (
+      <>
+        Fill out our{" "}
+        <a href={membershipFormUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-700" style={{ textDecoration: 'underline' }}>
+          membership form
+        </a>{" "}
+        and you're good to go. See you at the next session!
+      </>
+    ),
   },
   {
     question: "What should I bring?",
@@ -60,7 +79,7 @@ export default function FaqPage() {
         {faqs.map((faq) => (
           <div key={faq.question} className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm">
             <h3 className="text-base font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-2 text-sm text-slate-600">{faq.answer}</p>
+            <div className="mt-2 text-sm text-slate-600">{faq.answer}</div>
           </div>
         ))}
       </div>

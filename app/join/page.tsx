@@ -12,7 +12,7 @@ const steps = [
   {
     title: "Become a member",
     description: "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay connected.",
-    action: { label: "Membership link", href: "#" },
+    action: { label: "Membership link", href: "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform" },
   },
   {
     title: "Join Discord",
@@ -39,6 +39,8 @@ export default function JoinPage() {
             {step.action && (
               <Link
                 href={step.action.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm font-semibold text-sky-700 underline decoration-sky-200 underline-offset-4"
               >
                 {step.action.label}

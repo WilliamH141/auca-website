@@ -91,10 +91,10 @@ export default function Home() {
               <p className="text-sm text-slate-600">We usually reply within a day during semester.</p>
             </div>
             <div className="flex gap-3 text-sm font-medium text-slate-700">
-              <Link href="https://discord.gg/gA7Kudmfa2" className="rounded-full border border-slate-200 px-4 py-2 transition hover:-translate-y-0.5 hover:border-sky-300">
+              <Link href="https://discord.gg/gA7Kudmfa2" target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-200 px-4 py-2 transition hover:-translate-y-0.5 hover:border-sky-300">
                 Discord
               </Link>
-              <Link href="https://instagram.com/uoachessassociation" className="rounded-full border border-slate-200 px-4 py-2 transition hover:-translate-y-0.5 hover:border-sky-300">
+              <Link href="https://instagram.com/uoachessassociation" target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-200 px-4 py-2 transition hover:-translate-y-0.5 hover:border-sky-300">
                 Instagram
               </Link>
             </div>

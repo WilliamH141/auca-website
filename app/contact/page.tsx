@@ -60,13 +60,13 @@ export default function ContactPage() {
           <div>
             <p className="text-sm font-semibold text-slate-900">Socials</p>
             <div className="mt-2 flex flex-col gap-2 text-sm font-medium text-slate-700">
-              <Link href="https://discord.gg/gA7Kudmfa2" className="transition hover:text-sky-700">
+              <Link href="https://discord.gg/gA7Kudmfa2" target="_blank" rel="noopener noreferrer" className="transition hover:text-sky-700">
                 Discord
               </Link>
-              <Link href="https://instagram.com/uoachessassociation" className="transition hover:text-sky-700">
+              <Link href="https://instagram.com/uoachessassociation" target="_blank" rel="noopener noreferrer" className="transition hover:text-sky-700">
                 Instagram
               </Link>
-                <Link href="https://www.facebook.com/aucklandunichess/" className="transition hover:text-sky-700">
+                <Link href="https://www.facebook.com/aucklandunichess/" target="_blank" rel="noopener noreferrer" className="transition hover:text-sky-700">
                 Facebook
               </Link>
             </div>
