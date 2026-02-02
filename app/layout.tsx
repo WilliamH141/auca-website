@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Merriweather } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         <main className="mt-4 min-h-screen space-y-16 px-4 pb-16 sm:px-6 lg:px-0">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
