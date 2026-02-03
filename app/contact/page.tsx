@@ -78,7 +78,7 @@ export default function ContactPage() {
     <Section
       eyebrow="Contact"
       title="Get in touch"
-      description="Reach out via email, Discord, Instagram, or Facebook. We reply fast."
+      description="Reach out via email, Discord, Instagram, or Facebook. We reply quickly during semester."
     >
       <div className="flex flex-col items-center gap-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -102,7 +102,7 @@ export default function ContactPage() {
           <p className="text-sm font-semibold text-slate-900">Direct Email</p>
           <p className="text-base text-slate-700">aucklandunichess@gmail.com</p>
           <p className="text-xs text-slate-600">
-            We usually reply within a day during semester.
+            We usually reply within a day during semester weeks.
           </p>
         </div>
       </div>

@@ -7,8 +7,8 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/team", label: "Team" },
   { href: "/events", label: "Events" },
+  { href: "/team", label: "Team" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -56,7 +56,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/join"
-            className={`${buttonClass} bg-sky-600 text-white shadow-lg shadow-sky-200 hover:bg-sky-700`}
+            className={`${buttonClass} bg-sky-600 !text-white shadow-lg shadow-sky-200 hover:bg-sky-700`}
           >
             Join
           </Link>
@@ -110,7 +110,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/join"
-                className={`${buttonClass} bg-sky-600 text-white shadow-lg shadow-sky-200 hover:bg-sky-700`}
+                className={`${buttonClass} bg-sky-600 !text-white shadow-lg shadow-sky-200 hover:bg-sky-700`}
                 onClick={() => setOpen(false)}
               >
                 Join AUCA

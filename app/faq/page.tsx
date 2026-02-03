@@ -16,8 +16,7 @@ const faqs = [
     question: "Is membership free?",
     answer: (
       <>
-        Absolutely! Membership and all our events are completely free. No hidden
-        costs or surprises.{" "}
+        Yep—membership and all our events are free. No hidden costs.{" "}
         <a
           href={membershipFormUrl}
           target="_blank"
@@ -39,7 +38,7 @@ const faqs = [
   {
     question: "When and where do you meet?",
     answer:
-      "We meet weekly during semester on City Campus. Check Discord or Instagram for the latest times and locations—they're updated regularly.",
+      "We meet weekly during semester on City Campus. Check Discord or Instagram for the latest times and rooms—they're updated regularly.",
   },
   {
     question: "How do I join?",
@@ -67,7 +66,7 @@ const faqs = [
   {
     question: "Can I attend without signing up first?",
     answer:
-      "Definitely! Come along to any session and check us out. You can sign up whenever you're ready.",
+      "Definitely. Come along to any session and check us out—sign up whenever you're ready.",
   },
   {
     question: "Do you run tournaments?",
@@ -81,7 +80,7 @@ const faqs = [
   },
   {
     question: "Can non‑UoA students join?",
-    answer: "Usually, yeah! Just give us a heads up in advance.",
+    answer: "Usually, yes—just give us a heads-up in advance.",
   },
   {
     question: "How can I help or volunteer?",

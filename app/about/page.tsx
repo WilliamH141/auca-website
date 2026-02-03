@@ -33,7 +33,7 @@ export default function AboutPage() {
       <Section
         eyebrow="About AUCA"
         title="Chess that fits student life"
-        description="Founded by University of Auckland students, AUCA exists to make chess easy to access on campus and online."
+        description="Founded by University of Auckland students, AUCA makes chess easy to access on campus and online."
       >
         <div className="grid gap-6 md:grid-cols-3">
           {pillars.map((item) => (
@@ -49,20 +49,20 @@ export default function AboutPage() {
       <Section
         eyebrow="What to expect"
         title="Sessions, tournaments, and support"
-        description="We meet weekly during semester with special events sprinkled in between."
+        description="We meet weekly during semester, with extra events through the year."
       >
         <div className="grid gap-6 md:grid-cols-2">
           <Card
             title="Weekly meetups"
-            description="Casual games on campus with boards and clocks provided. We pair new members with friendly players right away."
+            description="Casual games on campus with boards and clocks provided. We'll help you find a board and a game quickly."
           />
           <Card
             title="Learning and resources"
-            description="Opening prep, tactics puzzles, and post-game analysis shared in our Discord. We plan short workshops each term."
+            description="Opening prep, tactics puzzles, and post-game analysis on our Discord. Short workshops each term."
           />
           <Card
             title="Friendly tournaments"
-            description="Rapid, blitz, and theme nights. Prizes focus on participation and improvement rather than just ratings."
+            description="Rapid, blitz, and theme nights. Prizes focus on participation and improvement, not just ratings."
           />
           <Card
             title="Collaborations"
@@ -88,10 +88,9 @@ export default function AboutPage() {
             >
               Chess New Zealand
             </Link>
-            , the national governing body for chess. Whether you're interested
-            in getting an official rating, entering national tournaments, or
-            connecting with the broader NZ chess community, Chess NZ is a great
-            resource.
+            , the national governing body for chess. If you're interested in an
+            official rating, national tournaments, or connecting with the wider
+            NZ chess community, Chess NZ is a great place to start.
           </p>
         </div>
       </Section>

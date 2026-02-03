@@ -13,7 +13,7 @@ const steps = [
   {
     title: "Become a member",
     description:
-      "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay connected.",
+      "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay in touch.",
     action: {
       label: "Membership link",
       href: "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform",
@@ -41,7 +41,7 @@ export default function JoinPage() {
     <Section
       eyebrow="Join AUCA"
       title="Ready to play?"
-      description="Membership and all events are completely free. Join anytime—no fees, no catch."
+      description="Membership and all events are free. Join anytime—no fees, no pressure."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {steps.map((step) => (
@@ -69,8 +69,7 @@ export default function JoinPage() {
         </p>
         <p className="mt-2">
           Questions about joining? Email aucklandunichess@gmail.com or message
-          us on Discord. We're here to help you get started—no barriers, no
-          cost.
+          us on Discord. We're happy to help you get started.
         </p>
       </div>
     </Section>

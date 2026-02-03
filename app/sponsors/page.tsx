@@ -18,7 +18,7 @@ export default function SponsorsPage() {
     <Section
       eyebrow="Support"
       title="Our Sponsors"
-      description="Thanks to our sponsors for supporting AUCA and making our events possible."
+      description="Thanks to our sponsors for supporting AUCA and helping make our events possible."
     >
       <div className="flex flex-col items-center gap-12">
         {/* sponsors */}

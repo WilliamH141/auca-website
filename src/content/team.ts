@@ -45,7 +45,7 @@ export const team: CommitteeMember[] = [
   {
     name: "Lucas Barnett-Harris",
     role: "Events Executive",
-    bio: "Helps organize friendly matches and inter-university chess events.",
+    bio: "Helps organise friendly matches and inter-university chess events.",
   },
 
   // marketing Executives

@@ -11,7 +11,7 @@ export default function Home() {
     <div className="space-y-16">
       <Hero
         title="Chess for everyone at the University of Auckland"
-        subtitle="Casual sessions, tournaments, and a friendly community that meets weekly on campus. Join us whether you are learning your first opening or prepping for your next big match."
+        subtitle="Casual sessions, tournaments, and a friendly community that meets weekly on campus. Whether you are brand new or prepping for your next match, you are welcome."
         primaryCta={{ label: "Join AUCA", href: "/join" }}
         secondaryCta={{ label: "View Events", href: "/events" }}
         backgroundImages={[
@@ -27,12 +27,12 @@ export default function Home() {
       <Section
         eyebrow="What we do"
         title="A club for every kind of chess player"
-        description="We keep things simple: regular casual meetups, friendly tournaments, and a supportive community of students who love the game."
+        description="We keep things simple: weekly casual meetups, friendly tournaments, and a supportive student community that loves the game."
       >
         <div className="grid gap-6 md:grid-cols-3">
           <Card
             title="Casual Sessions"
-            description="Drop in weekly to play, learn, and meet new players across all levels. Boards and clocks provided."
+            description="Drop in weekly to play, learn, and meet new players of all levels. Boards and clocks provided."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function Home() {
           />
           <Card
             title="Tournaments"
-            description="Rapid nights, blitz ladders, and friendlies with other universities. Friendly prizes and good vibes."
+            description="Rapid and blitz tournaments, plus friendly matches with other universities. Small prizes and good vibes."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ export default function Home() {
           />
           <Card
             title="Community"
-            description="Make friends, analyze games, and share resources through our Discord and Instagram updates."
+            description="Make friends, review games, and share resources through our Discord and Instagram updates."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export default function Home() {
       <Section
         eyebrow="Upcoming events"
         title="Mark your calendar"
-        description="We publish events ahead of time so you can plan around exams and assignments."
+        description="We post events early so you can plan around exams and deadlines."
         actionLabel="See all events"
         actionHref="/events"
       >
@@ -118,7 +118,7 @@ export default function Home() {
                 aucklandunichess@gmail.com
               </p>
               <p className="text-sm text-slate-600">
-                We usually reply within a day during semester.
+                We usually reply within a day during semester weeks.
               </p>
             </div>
             <div className="flex gap-3 text-sm font-medium text-slate-700">
