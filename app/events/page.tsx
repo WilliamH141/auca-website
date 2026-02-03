@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Card } from "../components/Card";
+import { CalendarPicker } from "../components/CalendarPicker";
 import { Section } from "../components/Section";
 import { events } from "../../src/content/events";
 
@@ -28,12 +28,13 @@ export default function EventsPage() {
             <p className="text-sm font-medium text-slate-700">
               {event.location}
             </p>
-            <Link
-              href={event.addToCalendarUrl || "#"}
-              className="text-sm font-semibold text-sky-700 underline decoration-sky-200 underline-offset-4"
-            >
-              Add to calendar
-            </Link>
+            <CalendarPicker
+              title={event.title}
+              date={event.date}
+              time={event.time}
+              location={event.location}
+              description={event.description}
+            />
           </Card>
         ))}
       </div>

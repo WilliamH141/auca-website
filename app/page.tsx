@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Card } from "./components/Card";
+import { CalendarPicker } from "./components/CalendarPicker";
 import { Hero } from "./components/Hero";
 import { Section } from "./components/Section";
 import { events } from "../src/content/events";
@@ -93,12 +94,13 @@ export default function Home() {
               <div className="text-sm font-medium text-slate-700">
                 {event.location}
               </div>
-              <Link
-                href="/events"
-                className="text-sm font-semibold text-sky-700 underline decoration-sky-200 underline-offset-4"
-              >
-                Add to calendar
-              </Link>
+              <CalendarPicker
+                title={event.title}
+                date={event.date}
+                time={event.time}
+                location={event.location}
+                description={event.description}
+              />
             </Card>
           ))}
         </div>
