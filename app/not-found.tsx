@@ -8,9 +8,12 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 py-12">
       <div className="text-center space-y-4">
         <div className="text-7xl font-bold text-slate-900">404</div>
-        <h1 className="text-4xl font-bold text-slate-900 font-serif">Illegal Move</h1>
+        <h1 className="text-4xl font-bold text-slate-900 font-serif">
+          Illegal Move
+        </h1>
         <p className="text-lg text-slate-600 max-w-md">
-          That square doesn't exist on this board. Let's get you back into the game.
+          That square doesn't exist on this board. Let's get you back into the
+          game.
         </p>
       </div>
       <div className="flex flex-col gap-3 pt-4 sm:flex-row">

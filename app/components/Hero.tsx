@@ -8,7 +8,13 @@ type HeroProps = {
   secondaryCta: { label: string; href: string };
 };
 
-export function Hero({ title, subtitle, backgroundImage, primaryCta, secondaryCta }: HeroProps) {
+export function Hero({
+  title,
+  subtitle,
+  backgroundImage,
+  primaryCta,
+  secondaryCta,
+}: HeroProps) {
   return (
     <section className="relative isolate overflow-hidden rounded-3xl bg-slate-900 text-white shadow-2xl shadow-slate-900/15">
       <div
@@ -23,9 +29,15 @@ export function Hero({ title, subtitle, backgroundImage, primaryCta, secondaryCt
       />
       <div className="absolute inset-0 bg-slate-950/70" />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Auckland University Chess Association</p>
-        <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{title}</h1>
-        <p className="max-w-2xl text-lg text-slate-100 sm:text-xl">{subtitle}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
+          Auckland University Chess Association
+        </p>
+        <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+          {title}
+        </h1>
+        <p className="max-w-2xl text-lg text-slate-100 sm:text-xl">
+          {subtitle}
+        </p>
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href={primaryCta.href}

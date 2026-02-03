@@ -23,7 +23,8 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: "Auckland University Chess Association | AUCA",
-  description: "The official chess club at the University of Auckland. Casual play, tournaments, and community events for all levels.",
+  description:
+    "The official chess club at the University of Auckland. Casual play, tournaments, and community events for all levels.",
   metadataBase: new URL("https://auca.nz"),
 };
 
@@ -34,9 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased text-slate-900`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased text-slate-900`}
+      >
         <Navbar />
-        <main className="mt-4 min-h-screen space-y-16 px-4 pb-16 sm:px-6 lg:px-0">{children}</main>
+        <main className="mt-4 min-h-screen space-y-16 px-4 pb-16 sm:px-6 lg:px-0">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -16,21 +16,21 @@ export const team: CommitteeMember[] = [
     name: "Joshua Little",
     role: "Vice President, Secretary & Engagement Officer",
     bio: "Coordinates weekly sessions, handles communications, and keeps the community engaged.",
-    image: "team/josh.png"
+    image: "team/josh.png",
   },
   {
     name: "Allen Li",
     role: "Vice President & Treasurer",
     bio: "Manages funding, equipment, and ensures resources are ready for every event.",
-    image: "team/allen.png"
+    image: "team/allen.png",
   },
   {
     name: "Kazmaire Bautista",
     role: "Marketing Lead",
     bio: "Drives club promotion, social media strategy, and brand visibility across campus.",
-    image: "team/kaz.png"
+    image: "team/kaz.png",
   },
-  
+
   // events Executives
   {
     name: "Omar",
@@ -47,7 +47,7 @@ export const team: CommitteeMember[] = [
     role: "Events Executive",
     bio: "Helps organize friendly matches and inter-university chess events.",
   },
-  
+
   // marketing Executives
   {
     name: "Xavier Miller",
@@ -58,20 +58,20 @@ export const team: CommitteeMember[] = [
     name: "Eden Li",
     role: "Marketing Executive",
     bio: "Designs promotional materials and supports outreach campaigns across campus.",
-    image: "team/eden.png"
+    image: "team/eden.png",
   },
   {
     name: "Ernest Nel",
     role: "Marketing Executive",
     bio: "Manages online presence and helps grow AUCA's community through digital channels.",
   },
-  
+
   // general Executives
   {
     name: "William Huang",
     role: "General Executive",
     bio: "Supports club operations and contributes to various initiatives across the team.",
-    image: "team/william.png"
+    image: "team/william.png",
   },
   {
     name: "Felix Xie",

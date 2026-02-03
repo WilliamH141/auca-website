@@ -6,7 +6,8 @@ import { events } from "../../src/content/events";
 
 export const metadata: Metadata = {
   title: "Events | AUCA",
-  description: "Upcoming Auckland University Chess Association events: casual sessions, tournaments, and collaborations.",
+  description:
+    "Upcoming Auckland University Chess Association events: casual sessions, tournaments, and collaborations.",
 };
 
 export default function EventsPage() {
@@ -24,7 +25,9 @@ export default function EventsPage() {
             description={event.description}
             meta={`${event.date} • ${event.time}`}
           >
-            <p className="text-sm font-medium text-slate-700">{event.location}</p>
+            <p className="text-sm font-medium text-slate-700">
+              {event.location}
+            </p>
             <Link
               href={event.addToCalendarUrl || "#"}
               className="text-sm font-semibold text-sky-700 underline decoration-sky-200 underline-offset-4"

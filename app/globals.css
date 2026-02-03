@@ -4,7 +4,7 @@
   --background: #f7f8fb;
   --foreground: #0f172a;
   --muted: #334155;
-  --accent: #D97706;
+  --accent: #d97706;
 }
 
 @theme inline {
@@ -17,12 +17,17 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, #B4BAC7 0, transparent 25%),
-    radial-gradient(circle at 80% 0%, #C4CAD8 0, transparent 22%),
-    radial-gradient(circle at 50% 100%, #9CA3AF 0, transparent 30%),
+  background:
+    radial-gradient(circle at 20% 20%, #b4bac7 0, transparent 25%),
+    radial-gradient(circle at 80% 0%, #c4cad8 0, transparent 22%),
+    radial-gradient(circle at 50% 100%, #9ca3af 0, transparent 30%),
     var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family:
+    var(--font-geist-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
   min-height: 100vh;
 }
 

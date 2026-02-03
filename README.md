@@ -14,6 +14,7 @@ Make sure you have the following installed:
 Download here: [nodejs.org](https://nodejs.org)
 
 After installing, open Terminal (Mac) or Command Prompt / PowerShell (Windows) and check:
+
 ```bash
 node -v
 npm -v
@@ -45,6 +46,7 @@ npm run dev
 ```
 
 You should see:
+
 ```
 > ready - started server on 0.0.0.0:3000
 ```

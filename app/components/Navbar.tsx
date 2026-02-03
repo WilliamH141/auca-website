@@ -30,7 +30,11 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-gradient-to-b from-white/95 to-white/80 backdrop-blur shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-6 md:px-6 lg:px-0">
         <Link href="/" className="flex items-center gap-3">
-          <img src="/output-onlinepngtools.png" alt="AUCA Logo" className="h-12 w-12 object-contain" />
+          <img
+            src="/output-onlinepngtools.png"
+            alt="AUCA Logo"
+            className="h-12 w-12 object-contain"
+          />
           <div className="flex flex-col leading-tight">
             <span className="text-lg font-semibold text-slate-900">AUCA</span>
             <span className="text-sm text-slate-600">Chess Association</span>
@@ -39,7 +43,11 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass(link.href)}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={linkClass(link.href)}
+            >
               {link.label}
             </Link>
           ))}
@@ -70,9 +78,17 @@ export function Navbar() {
             className="h-6 w-6"
           >
             {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
             )}
           </svg>
         </button>

@@ -4,21 +4,25 @@ import { Section } from "../components/Section";
 
 export const metadata: Metadata = {
   title: "About | AUCA",
-  description: "Who we are, what we value, and how the Auckland University Chess Association supports students who love chess.",
+  description:
+    "Who we are, what we value, and how the Auckland University Chess Association supports students who love chess.",
 };
 
 const pillars = [
   {
     title: "Inclusive community",
-    description: "We welcome complete beginners, casual players, and rated competitors. Everyone gets a game and a friendly intro.",
+    description:
+      "We welcome complete beginners, casual players, and rated competitors. Everyone gets a game and a friendly intro.",
   },
   {
     title: "Student-led and simple",
-    description: "Run by volunteers who balance study and play. Membership and events are completely free—no hidden costs or barriers.",
+    description:
+      "Run by volunteers who balance study and play. Membership and events are completely free—no hidden costs or barriers.",
   },
   {
     title: "Growth and wellbeing",
-    description: "Chess is for focus and joy. We pair tournaments with relaxed sessions, making sure the club stays supportive.",
+    description:
+      "Chess is for focus and joy. We pair tournaments with relaxed sessions, making sure the club stays supportive.",
   },
 ];
 
@@ -32,7 +36,11 @@ export default function AboutPage() {
       >
         <div className="grid gap-6 md:grid-cols-3">
           {pillars.map((item) => (
-            <Card key={item.title} title={item.title} description={item.description} />
+            <Card
+              key={item.title}
+              title={item.title}
+              description={item.description}
+            />
           ))}
         </div>
       </Section>
