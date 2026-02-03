@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 type HeroProps = {
   title: string;
   subtitle: string;
   backgroundImage?: string;
+  backgroundImages?: string[];
+  imageSwitchInterval?: number;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
 };
@@ -12,23 +17,45 @@ export function Hero({
   title,
   subtitle,
   backgroundImage,
+  backgroundImages,
+  imageSwitchInterval = 5000,
   primaryCta,
   secondaryCta,
 }: HeroProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = backgroundImages && backgroundImages.length > 0 
+    ? backgroundImages 
+    : backgroundImage 
+      ? [backgroundImage]
+      : ["url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1600&q=80')"];
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, imageSwitchInterval);
+
+    return () => clearInterval(interval);
+  }, [images.length, imageSwitchInterval]);
+
   return (
     <section className="relative isolate overflow-hidden rounded-3xl bg-slate-900 text-white shadow-2xl shadow-slate-900/15">
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            backgroundImage ||
-            "url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1600&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <div className="absolute inset-0 bg-slate-950/70" />
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: image.startsWith('url(') ? image : `url('${image}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: index === currentImageIndex ? 1 : 0,
+            zIndex: index === currentImageIndex ? 1 : 0,
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-slate-950/70" style={{ zIndex: 2 }} />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-32 sm:px-10 sm:py-40 lg:px-16 lg:py-48" style={{ zIndex: 3 }}>
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
           Auckland University Chess Association
         </p>
