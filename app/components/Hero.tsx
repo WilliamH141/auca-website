@@ -23,11 +23,14 @@ export function Hero({
   secondaryCta,
 }: HeroProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = backgroundImages && backgroundImages.length > 0 
-    ? backgroundImages 
-    : backgroundImage 
-      ? [backgroundImage]
-      : ["url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1600&q=80')"];
+  const images =
+    backgroundImages && backgroundImages.length > 0
+      ? backgroundImages
+      : backgroundImage
+        ? [backgroundImage]
+        : [
+            "url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1600&q=80')",
+          ];
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -46,7 +49,9 @@ export function Hero({
           key={index}
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
           style={{
-            backgroundImage: image.startsWith('url(') ? image : `url('${image}')`,
+            backgroundImage: image.startsWith("url(")
+              ? image
+              : `url('${image}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: index === currentImageIndex ? 1 : 0,
@@ -55,7 +60,10 @@ export function Hero({
         />
       ))}
       <div className="absolute inset-0 bg-slate-950/70" style={{ zIndex: 2 }} />
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-32 sm:px-10 sm:py-40 lg:px-16 lg:py-48" style={{ zIndex: 3 }}>
+      <div
+        className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-32 sm:px-10 sm:py-40 lg:px-16 lg:py-48"
+        style={{ zIndex: 3 }}
+      >
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
           Auckland University Chess Association
         </p>

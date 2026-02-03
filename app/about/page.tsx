@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Card } from "../components/Card";
 import { Section } from "../components/Section";
 
@@ -67,6 +68,31 @@ export default function AboutPage() {
             title="Collaborations"
             description="We love joint events with other clubs, faculties, and local chess groups. Email us to plan something new."
           />
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Part of the chess community"
+        title="Connected locally and nationally"
+        description="We're proud to be part of New Zealand's vibrant chess scene."
+      >
+        <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm">
+          <p className="text-slate-700">
+            AUCA members are encouraged to explore competitive chess through{" "}
+            <Link
+              href="https://newzealandchess.co.nz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sky-700"
+              style={{ textDecoration: "underline" }}
+            >
+              Chess New Zealand
+            </Link>
+            , the national governing body for chess. Whether you're interested
+            in getting an official rating, entering national tournaments, or
+            connecting with the broader NZ chess community, Chess NZ is a great
+            resource.
+          </p>
         </div>
       </Section>
     </div>
