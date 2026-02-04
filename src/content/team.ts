@@ -33,9 +33,10 @@ export const team: CommitteeMember[] = [
 
   // events Executives
   {
-    name: "Omar",
+    name: "Omar Bukhari",
     role: "Events Executive",
     bio: "Supports tournament planning and helps coordinate weekly chess sessions.",
+    image: "/team/omar.png"
   },
   {
     name: "Brian Liu",
@@ -87,5 +88,6 @@ export const team: CommitteeMember[] = [
     name: "Mason Ward",
     role: "General Executive",
     bio: "Helps coordinate logistics and ensures members have a great experience at events.",
+    image: "/team/mason.png"
   },
 ];
