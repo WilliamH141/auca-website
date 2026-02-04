@@ -86,7 +86,7 @@ export default function AboutPage() {
               className="font-semibold text-sky-700"
               style={{ textDecoration: "underline" }}
             >
-              Chess New Zealand
+              NZ Chess Federation
             </Link>
             , the national governing body for chess. If you're interested in an
             official rating, national tournaments, or connecting with the wider

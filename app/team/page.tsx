@@ -14,7 +14,7 @@ export default function TeamPage() {
     <Section
       eyebrow="Committee"
       title="Meet the team"
-      description="The student volunteers keeping AUCA running smoothly. Reach out if you want to help or shadow a role."
+      description="The student volunteers keeping AUCA running smoothly."
     >
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
         {team.map((member) => (
