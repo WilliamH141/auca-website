@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f8fb;
+  --background: #bfdbf5;
   --foreground: #0f172a;
   --muted: #334155;
-  --accent: #d97706;
+  --accent: #4b77a3;
+  --accent-strong: color-mix(in oklab, var(--accent) 85%, #0f172a);
+  --accent-soft: color-mix(in oklab, var(--accent) 18%, white);
+  --border-dark: color-mix(in oklab, #0f172a 25%, white);
 }
 
 @theme inline {
@@ -17,11 +20,7 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at 20% 20%, #b4bac7 0, transparent 25%),
-    radial-gradient(circle at 80% 0%, #c4cad8 0, transparent 22%),
-    radial-gradient(circle at 50% 100%, #9ca3af 0, transparent 30%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
   font-family:
     var(--font-geist-sans),
@@ -38,7 +37,31 @@ a {
 
 .glass-panel {
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(217, 119, 6, 0.1);
+  border: 1px solid var(--border-dark);
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.04);
   backdrop-filter: blur(10px);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-text-strong {
+  color: var(--accent-strong);
+}
+
+.accent-bg {
+  background-color: var(--accent);
+}
+
+.accent-bg-soft {
+  background-color: var(--accent-soft);
+}
+
+.thin-border {
+  border-color: var(--border-dark);
+}
+
+.thin-border-hover:hover {
+  border-color: color-mix(in oklab, #0f172a 28%, white);
 }

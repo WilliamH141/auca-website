@@ -64,7 +64,7 @@ export function Hero({
         className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-32 sm:px-10 sm:py-40 lg:px-16 lg:py-48"
         style={{ zIndex: 3 }}
       >
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-100 drop-shadow-sm">
           Auckland University Chess Association
         </p>
         <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
@@ -76,13 +76,13 @@ export function Hero({
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href={primaryCta.href}
-            className="inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:-translate-y-0.5 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex items-center justify-center rounded-full accent-bg px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 ring-1 ring-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             {primaryCta.label}
           </Link>
           <Link
             href={secondaryCta.href}
-            className="inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex items-center justify-center rounded-full bg-white/20 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/40 transition hover:-translate-y-0.5 hover:bg-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             {secondaryCta.label}
           </Link>

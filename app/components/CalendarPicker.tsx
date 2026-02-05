@@ -132,7 +132,7 @@ export function CalendarPicker({
     <div ref={dropdownRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3 py-1.5 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-100"
+        className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border thin-border accent-bg-soft px-3 py-1.5 text-sm font-semibold accent-text-strong transition thin-border-hover hover:bg-[color:var(--accent-strong)] hover:shadow-md hover:shadow-black/20 hover:brightness-95 active:brightness-85"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ export function CalendarPicker({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 z-50 mt-2 w-64 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+        <div className="absolute left-0 z-50 mt-2 w-64 overflow-hidden rounded-xl border thin-border bg-white shadow-xl">
           <div className="p-2">
             {calendarOptions.map((option) => (
               <div key={option.name}>

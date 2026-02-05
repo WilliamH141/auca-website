@@ -23,7 +23,7 @@ export function Section({
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl space-y-2">
           {eyebrow && (
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] accent-text-strong">
               {eyebrow}
             </p>
           )}
@@ -37,7 +37,7 @@ export function Section({
         {actionHref && actionLabel && (
           <Link
             href={actionHref}
-            className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-500"
+            className="inline-flex items-center justify-center rounded-lg border thin-border accent-bg px-4 py-2 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent)]"
           >
             {actionLabel}
           </Link>

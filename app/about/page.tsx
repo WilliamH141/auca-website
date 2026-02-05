@@ -76,14 +76,14 @@ export default function AboutPage() {
         title="Connected locally and nationally"
         description="We're proud to be part of New Zealand's vibrant chess scene."
       >
-        <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm">
+        <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm">
           <p className="text-slate-700">
             AUCA members are encouraged to explore competitive chess through{" "}
             <Link
               href="https://newzealandchess.co.nz/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-sky-700"
+              className="font-semibold accent-text-strong"
               style={{ textDecoration: "underline" }}
             >
               NZ Chess Federation

@@ -40,13 +40,13 @@ export default function SponsorsPage() {
         {/* become a sponsor button */}
         <Link
           href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
-          className="inline-flex items-center justify-center rounded-full bg-sky-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:-translate-y-0.5 hover:bg-sky-700"
+          className="inline-flex items-center justify-center rounded-full accent-bg px-8 py-4 text-sm font-semibold !text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
         >
           Become a Sponsor
         </Link>
 
         {/* why sponsor */}
-        <div className="w-full max-w-2xl space-y-6 rounded-2xl border border-slate-200 bg-white/80 p-8">
+        <div className="w-full max-w-2xl space-y-6 rounded-2xl border thin-border bg-white/80 p-8">
           <h3 className="text-2xl font-bold text-slate-900 font-serif">
             Why Sponsor AUCA?
           </h3>
@@ -80,11 +80,11 @@ export default function SponsorsPage() {
               </p>
             </div>
           </div>
-          <p className="text-sm text-slate-600 border-t border-slate-200 pt-6">
+          <p className="text-sm text-slate-600 border-t thin-border pt-6">
             Interested in sponsoring AUCA?{" "}
             <Link
               href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
-              className="font-semibold text-sky-600 hover:text-sky-700"
+              className="font-semibold accent-text-strong accent-hover-text"
             >
               Get in touch with us
             </Link>{" "}

@@ -10,14 +10,14 @@ type CardProps = {
 
 export function Card({ title, description, icon, meta, children }: CardProps) {
   return (
-    <div className="flex h-full flex-col gap-3 rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm shadow-slate-100 transition hover:-translate-y-1 hover:shadow-lg">
+    <div className="flex h-full flex-col gap-3 rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-slate-100 transition hover:-translate-y-1 hover:shadow-lg">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          {icon && <div className="text-sky-600">{icon}</div>}
+          {icon && <div className="accent-text-strong">{icon}</div>}
           <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
         </div>
         {meta && (
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+          <span className="rounded-full accent-bg-soft px-3 py-1 text-xs font-medium accent-text-strong">
             {meta}
           </span>
         )}

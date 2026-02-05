@@ -76,7 +76,7 @@ function SocialIcon({ type }: { type: string }) {
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-slate-200 bg-white/80 backdrop-blur">
+    <footer className="mt-16 border-t thin-border bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 md:px-6 lg:px-0">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
@@ -96,7 +96,7 @@ export function Footer() {
                 target={item.label !== "Email" ? "_blank" : undefined}
                 rel={item.label !== "Email" ? "noopener noreferrer" : undefined}
                 aria-label={item.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:-translate-y-0.5 hover:border-sky-400 hover:text-sky-700"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border thin-border text-slate-700 transition hover:-translate-y-0.5 thin-border-hover hover:text-[color:var(--accent-strong)]"
               >
                 <SocialIcon type={item.icon} />
               </Link>

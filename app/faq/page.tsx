@@ -21,7 +21,7 @@ const faqs = [
           href={membershipFormUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-sky-700"
+          className="font-semibold accent-text-strong"
           style={{ textDecoration: "underline" }}
         >
           Sign up here
@@ -49,7 +49,7 @@ const faqs = [
           href={membershipFormUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-sky-700"
+          className="font-semibold accent-text-strong"
           style={{ textDecoration: "underline" }}
         >
           membership form
@@ -100,7 +100,7 @@ export default function FaqPage() {
         {faqs.map((faq) => (
           <div
             key={faq.question}
-            className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm"
+            className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm"
           >
             <h3 className="text-base font-semibold text-slate-900">
               {faq.question}

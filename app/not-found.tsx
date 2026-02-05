@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   const buttonClass =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400";
+    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent)]";
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 py-12">
@@ -19,13 +19,13 @@ export default function NotFound() {
       <div className="flex flex-col gap-3 pt-4 sm:flex-row">
         <Link
           href="/"
-          className={`${buttonClass} bg-sky-600 text-white shadow-lg shadow-sky-200 hover:bg-sky-700`}
+          className={`${buttonClass} accent-bg text-white shadow-lg shadow-black/10 hover:bg-[color:var(--accent-strong)]`}
         >
           Home
         </Link>
         <Link
           href="/events"
-          className={`${buttonClass} border border-slate-200 text-slate-700 hover:border-sky-300`}
+          className={`${buttonClass} border thin-border text-slate-700 thin-border-hover`}
         >
           Events
         </Link>

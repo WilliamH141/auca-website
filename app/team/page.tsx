@@ -20,7 +20,7 @@ export default function TeamPage() {
         {team.map((member) => (
           <div
             key={member.name}
-            className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            className="flex flex-col overflow-hidden rounded-2xl border thin-border bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
           >
             <div className="relative w-full bg-slate-100 pt-[100%]">
               {member.image ? (

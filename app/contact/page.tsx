@@ -88,9 +88,9 @@ export default function ContactPage() {
               href={contact.href}
               target={contact.name !== "Email" ? "_blank" : undefined}
               rel={contact.name !== "Email" ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-white/80 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:border-sky-300"
+              className="flex flex-col items-center gap-4 rounded-2xl border thin-border bg-white/80 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg thin-border-hover"
             >
-              <div className="text-sky-700">{contact.icon}</div>
+              <div className="accent-text-strong">{contact.icon}</div>
               <p className="text-lg font-semibold text-slate-900">
                 {contact.name}
               </p>
@@ -98,7 +98,7 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="w-full max-w-2xl space-y-4 rounded-2xl border border-slate-200 bg-white/80 p-8 text-center">
+        <div className="w-full max-w-2xl space-y-4 rounded-2xl border thin-border bg-white/80 p-8 text-center">
           <p className="text-sm font-semibold text-slate-900">Direct Email</p>
           <p className="text-base text-slate-700">aucklandunichess@gmail.com</p>
           <p className="text-xs text-slate-600">
