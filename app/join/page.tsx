@@ -63,7 +63,7 @@ export default function JoinPage() {
           </Card>
         ))}
       </div>
-      <div className="mt-8 rounded-2xl border thin-border bg-white/80 p-6 text-sm text-slate-700 shadow-sm">
+      <div className="mt-8 rounded-2xl border thin-border bg-white/80 p-6 text-sm text-slate-700 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
         <p className="font-semibold text-slate-900">
           Accessibility and support
         </p>

@@ -76,7 +76,7 @@ export default function AboutPage() {
         title="Connected locally and nationally"
         description="We're proud to be part of New Zealand's vibrant chess scene."
       >
-        <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm">
+        <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
           <p className="text-slate-700">
             AUCA members are encouraged to explore competitive chess through{" "}
             <Link

@@ -132,7 +132,7 @@ export function CalendarPicker({
     <div ref={dropdownRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border thin-border accent-bg-soft px-3 py-1.5 text-sm font-semibold accent-text-strong transition thin-border-hover hover:bg-[color:var(--accent-strong)] hover:shadow-md hover:shadow-black/20 hover:brightness-95 active:brightness-85"
+        className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border thin-border accent-bg-soft px-3 py-1.5 text-sm font-semibold accent-text-strong shadow-sm shadow-black/10 transition thin-border-hover hover:bg-[color:var(--accent-strong)] hover:shadow-md hover:shadow-black/20 hover:brightness-97 active:brightness-85"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -125,7 +125,7 @@ export default function Home() {
         actionLabel="Contact page"
         actionHref="/contact"
       >
-        <div className="flex flex-col gap-4 rounded-2xl border thin-border bg-white/80 p-6 shadow-sm">
+        <div className="flex flex-col gap-4 rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
           <div className="flex flex-col gap-2 text-slate-700 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-lg font-semibold text-slate-900">
@@ -140,7 +140,7 @@ export default function Home() {
                 href="https://discord.gg/gA7Kudmfa2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border thin-border accent-bg-soft px-4 py-2 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"
+                className="rounded-full border thin-border accent-bg-soft px-4 py-2 shadow-sm shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"
               >
                 Discord
               </Link>
@@ -148,7 +148,7 @@ export default function Home() {
                 href="https://instagram.com/uoachessassociation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border thin-border accent-bg-soft px-4 py-2 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"
+                className="rounded-full border thin-border accent-bg-soft px-4 py-2 shadow-sm shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"
               >
                 Instagram
               </Link>

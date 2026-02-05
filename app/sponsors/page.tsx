@@ -46,7 +46,7 @@ export default function SponsorsPage() {
         </Link>
 
         {/* why sponsor */}
-        <div className="w-full max-w-2xl space-y-6 rounded-2xl border thin-border bg-white/80 p-8">
+        <div className="w-full max-w-2xl space-y-6 rounded-2xl border thin-border bg-white/80 p-8 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
           <h3 className="text-2xl font-bold text-slate-900 font-serif">
             Why Sponsor AUCA?
           </h3>

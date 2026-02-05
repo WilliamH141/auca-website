@@ -100,7 +100,7 @@ export default function FaqPage() {
         {faqs.map((faq) => (
           <div
             key={faq.question}
-            className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm"
+            className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
           >
             <h3 className="text-base font-semibold text-slate-900">
               {faq.question}

@@ -58,6 +58,16 @@ a {
   background-color: var(--accent-soft);
 }
 
+.accent-bg,
+.accent-bg-soft {
+  transition: filter 0.2s ease, background-color 0.2s ease;
+}
+
+.accent-bg:hover,
+.accent-bg-soft:hover {
+  filter: brightness(0.9);
+}
+
 .thin-border {
   border-color: var(--border-dark);
 }

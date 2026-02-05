@@ -96,7 +96,7 @@ export function Footer() {
                 target={item.label !== "Email" ? "_blank" : undefined}
                 rel={item.label !== "Email" ? "noopener noreferrer" : undefined}
                 aria-label={item.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border thin-border text-slate-700 transition hover:-translate-y-0.5 thin-border-hover hover:text-[color:var(--accent-strong)]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border thin-border text-slate-700 shadow-sm shadow-black/10 transition hover:-translate-y-0.5 thin-border-hover hover:text-[color:var(--accent-strong)]"
               >
                 <SocialIcon type={item.icon} />
               </Link>
