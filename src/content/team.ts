@@ -11,6 +11,7 @@ export const team: CommitteeMember[] = [
     name: "Benjamin Guo",
     role: "President & Events Lead",
     bio: "Sets the vision, leads partnerships, and organizes tournaments to keep AUCA thriving.",
+    image: "team/ben.png"
   },
   {
     name: "Joshua Little",
