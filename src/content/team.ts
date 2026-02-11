@@ -43,6 +43,7 @@ export const team: CommitteeMember[] = [
     name: "Brian Liu",
     role: "Events Executive",
     bio: "Assists with event logistics and ensures smooth operations during tournaments.",
+    image: "/team/brian.png"
   },
   {
     name: "Lucas Barnett-Harris",
@@ -55,6 +56,7 @@ export const team: CommitteeMember[] = [
     name: "Xavier Miller",
     role: "Marketing Executive",
     bio: "Creates content and manages social media to keep members informed and engaged.",
+    image: "/team/xavier.png"
   },
   {
     name: "Eden Li",
@@ -79,6 +81,7 @@ export const team: CommitteeMember[] = [
     name: "Felix Xie",
     role: "General Executive",
     bio: "Assists with event setup and helps maintain a welcoming club environment.",
+    image: "/team/felix.png"
   },
   {
     name: "Rohit Mudaliar",
