@@ -35,36 +35,20 @@ export type Event = {
 
 const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
-    title: "Semester Welcome Blitz",
-    date: "March 10, 2026",
-    time: "6:00 PM - 8:30 PM",
-    location: "University Quad, City Campus",
+    title: "Opening Night",
+    date: "March 5, 2026",
+    time: "5:00 PM - 9:00 PM",
+    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
-      "Kick off the semester with a friendly blitz tournament open to all levels.",
+      "Join us for the first chess night of the year! Meet the team, play casual games, and kick off the semester together.",
   },
   {
-    title: "Weekly Casual Chess Night",
-    date: "Every Wednesday",
-    time: "5:30 PM - 7:30 PM",
-    location: "Kate Edger Commons, Level 0",
+    title: "Weekly Chess Night",
+    date: "Every Thursday",
+    time: "5:00 PM - 9:00 PM",
+    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
-      "Drop in to play casual games, learn new openings, and meet the community.",
-  },
-  {
-    title: "Intervarsity Friendly",
-    date: "April 6, 2026",
-    time: "10:00 AM - 3:00 PM",
-    location: "OGGB Case Room 2",
-    description:
-      "Teams from across NZ join AUCA for a day of rapid chess and collaboration.",
-  },
-  {
-    title: "End-of-Semester Rapid",
-    date: "June 15, 2026",
-    time: "6:00 PM - 9:00 PM",
-    location: "Engineering Building 401",
-    description:
-      "Celebrate the term with a rapid event featuring prizes and snacks.",
+      "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
   },
   // EXAMPLE BELOW
   // {
