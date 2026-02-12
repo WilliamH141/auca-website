@@ -83,7 +83,7 @@ export default function Home() {
         actionLabel="See all events"
         actionHref="/events"
       >
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {featuredEvents.map((event) => (
             <Card
               key={event.title}
@@ -91,12 +91,12 @@ export default function Home() {
               description={event.description}
               meta={`${event.date} • ${event.time}`}
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
+              <div className="flex items-start gap-1.5 text-sm font-medium text-slate-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="h-4 w-4 text-slate-500"
+                  className="h-4 w-4 text-slate-500 mt-0.5"
                 >
                   <path
                     fillRule="evenodd"
@@ -104,7 +104,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                {event.location}
+                <span className="whitespace-pre-line">{event.location}</span>
               </div>
               <CalendarPicker
                 title={event.title}
