@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const sponsors = [
   { name: "JS", logo: "/sponsors/js.png" },
   { name: "SIG", logo: "/sponsors/sig.png" },
+  { name: "GONGCHA", logo: "/sponsors/gongcha.png"}
 ];
 
 export default function SponsorsPage() {
