@@ -9,11 +9,23 @@ export const metadata: Metadata = {
 };
 
 const sponsors = [
-  { name: "JS", logo: "/sponsors/js.png" },
-  { name: "SIG", logo: "/sponsors/sig.png" },
-  { name: "GONGCHA", logo: "/sponsors/gongcha.png" },
-  { name: "AKL Chess Academy", logo: "/sponsors/aklchessacademy.png" },
-  { name: "HobbyCon", logo: "/sponsors/hobbycon.png" },
+  {
+    name: "JS",
+    logo: "/sponsors/js.png",
+    url: "https://www.janestreet.com/",
+  },
+  { name: "SIG", logo: "/sponsors/sig.png", url: "https://sig.com/" },
+  {
+    name: "GONGCHA",
+    logo: "/sponsors/gongcha.png",
+    url: "https://www.gongcha.co.nz/web/",
+  },
+  {
+    name: "AKL Chess Academy",
+    logo: "/sponsors/aklchessacademy.png",
+    url: "https://www.aucklandchessacademy.com/",
+  },
+  { name: "HobbyCon", logo: "/sponsors/hobbycon.png", url: "https://hobbycon.co.nz/" },
 ];
 
 const topSponsors = sponsors.slice(0, 3);
@@ -31,30 +43,38 @@ export default function SponsorsPage() {
         <div className="flex w-full max-w-4xl flex-col items-center gap-8">
           <div className="flex flex-wrap items-center justify-center gap-12">
             {topSponsors.map((sponsor) => (
-              <div
+              <Link
                 key={sponsor.name}
-                className="flex h-32 w-64 items-center justify-center"
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
+                aria-label={`${sponsor.name} website`}
               >
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
                   className="max-h-32 max-w-full object-contain"
                 />
-              </div>
+              </Link>
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12">
             {bottomSponsors.map((sponsor) => (
-              <div
+              <Link
                 key={sponsor.name}
-                className="flex h-32 w-64 items-center justify-center"
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
+                aria-label={`${sponsor.name} website`}
               >
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
                   className="max-h-32 max-w-full object-contain"
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
