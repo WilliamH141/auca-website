@@ -11,8 +11,13 @@ export const metadata: Metadata = {
 const sponsors = [
   { name: "JS", logo: "/sponsors/js.png" },
   { name: "SIG", logo: "/sponsors/sig.png" },
-  { name: "GONGCHA", logo: "/sponsors/gongcha.png"}
+  { name: "GONGCHA", logo: "/sponsors/gongcha.png" },
+  { name: "AKL Chess Academy", logo: "/sponsors/aklchessacademy.png" },
+  { name: "HobbyCon", logo: "/sponsors/hobbycon.png" },
 ];
+
+const topSponsors = sponsors.slice(0, 3);
+const bottomSponsors = sponsors.slice(3);
 
 export default function SponsorsPage() {
   return (
@@ -23,19 +28,35 @@ export default function SponsorsPage() {
     >
       <div className="flex flex-col items-center gap-12">
         {/* sponsors */}
-        <div className="flex flex-wrap items-center justify-center gap-12">
-          {sponsors.map((sponsor) => (
-            <div
-              key={sponsor.name}
-              className="h-32 w-64 flex items-center justify-center"
-            >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="max-h-32 max-w-full object-contain"
-              />
-            </div>
-          ))}
+        <div className="flex w-full max-w-4xl flex-col items-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            {topSponsors.map((sponsor) => (
+              <div
+                key={sponsor.name}
+                className="flex h-32 w-64 items-center justify-center"
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-32 max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            {bottomSponsors.map((sponsor) => (
+              <div
+                key={sponsor.name}
+                className="flex h-32 w-64 items-center justify-center"
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-32 max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* become a sponsor button */}
