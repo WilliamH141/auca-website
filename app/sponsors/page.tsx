@@ -19,14 +19,22 @@ const sponsors = [
     name: "GONGCHA",
     logo: "/sponsors/gongcha.png",
     url: "https://www.gongcha.co.nz/web/",
+    description: "Free topping with any drink.",
   },
   {
     name: "AKL Chess Academy",
     logo: "/sponsors/aklchessacademy.png",
     url: "https://www.aucklandchessacademy.com/",
+    description: "10% off tournaments.",
   },
   { name: "HobbyCon", logo: "/sponsors/hobbycon.png", url: "https://hobbycon.co.nz/" },
-  { name: "CakesLadders", logo: "/sponsors/cakesnladders.png", url: "https://cakesnladders.co.nz/"}
+  {
+    name: "CakesLadders",
+    logo: "/sponsors/cakesnladders.png",
+    url: "https://cakesnladders.co.nz/",
+    description:
+      "$1 off per person per hour, 1–5pm Wed–Fri. Membership required.",
+  },
 ];
 
 const topSponsors = sponsors.slice(0, 3);
@@ -44,38 +52,50 @@ export default function SponsorsPage() {
         <div className="flex w-full max-w-4xl flex-col items-center gap-8">
           <div className="flex flex-wrap items-center justify-center gap-12">
             {topSponsors.map((sponsor) => (
-              <Link
-                key={sponsor.name}
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
-                aria-label={`${sponsor.name} website`}
-              >
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="max-h-32 max-w-full object-contain"
-                />
-              </Link>
+              <div key={sponsor.name} className="flex w-64 flex-col items-center gap-2">
+                <Link
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
+                  aria-label={`${sponsor.name} website`}
+                >
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="max-h-32 max-w-full object-contain"
+                  />
+                </Link>
+                {sponsor.description && (
+                  <p className="text-center text-xs text-slate-600">
+                    {sponsor.description}
+                  </p>
+                )}
+              </div>
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12">
             {bottomSponsors.map((sponsor) => (
-              <Link
-                key={sponsor.name}
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
-                aria-label={`${sponsor.name} website`}
-              >
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="max-h-32 max-w-full object-contain"
-                />
-              </Link>
+              <div key={sponsor.name} className="flex w-64 flex-col items-center gap-2">
+                <Link
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-32 w-64 items-center justify-center rounded-2xl border border-transparent transition hover:-translate-y-0.5 hover:bg-slate-900/10 hover:shadow-md hover:shadow-black/10"
+                  aria-label={`${sponsor.name} website`}
+                >
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="max-h-32 max-w-full object-contain"
+                  />
+                </Link>
+                {sponsor.description && (
+                  <p className="text-center text-xs text-slate-600">
+                    {sponsor.description}
+                  </p>
+                )}
+              </div>
             ))}
           </div>
         </div>
