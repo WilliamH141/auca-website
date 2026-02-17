@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #CADDE8;
+  --background: #cadde8;
   --foreground: #0f172a;
   --muted: #334155;
   --accent: #4b77a3;
@@ -60,7 +60,9 @@ a {
 
 .accent-bg,
 .accent-bg-soft {
-  transition: filter 0.2s ease, background-color 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .accent-bg:hover,

@@ -11,7 +11,7 @@ export const team: CommitteeMember[] = [
     name: "Benjamin Guo",
     role: "President & Events Lead",
     bio: "Sets the vision, leads partnerships, and organizes tournaments to keep AUCA thriving.",
-    image: "team/ben.png"
+    image: "team/ben.png",
   },
   {
     name: "Joshua Little",
@@ -37,13 +37,13 @@ export const team: CommitteeMember[] = [
     name: "Omar Bukhari",
     role: "Events Executive",
     bio: "Supports tournament planning and helps coordinate weekly chess sessions.",
-    image: "/team/omar.png"
+    image: "/team/omar.png",
   },
   {
     name: "Brian Liu",
     role: "Events Executive",
     bio: "Assists with event logistics and ensures smooth operations during tournaments.",
-    image: "/team/brian.png"
+    image: "/team/brian.png",
   },
   {
     name: "Lucas Barnett-Harris",
@@ -56,7 +56,7 @@ export const team: CommitteeMember[] = [
     name: "Xavier Miller",
     role: "Marketing Executive",
     bio: "Creates content and manages social media to keep members informed and engaged.",
-    image: "/team/xavier.png"
+    image: "/team/xavier.png",
   },
   {
     name: "Eden Li",
@@ -81,7 +81,7 @@ export const team: CommitteeMember[] = [
     name: "Felix Xie",
     role: "General Executive",
     bio: "Assists with event setup and helps maintain a welcoming club environment.",
-    image: "/team/felix.png"
+    image: "/team/felix.png",
   },
   {
     name: "Rohit Mudaliar",
@@ -92,6 +92,6 @@ export const team: CommitteeMember[] = [
     name: "Mason Ward",
     role: "General Executive",
     bio: "Helps coordinate logistics and ensures members have a great experience at events.",
-    image: "/team/mason.png"
+    image: "/team/mason.png",
   },
 ];

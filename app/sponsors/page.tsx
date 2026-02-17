@@ -27,7 +27,11 @@ const sponsors = [
     url: "https://www.aucklandchessacademy.com/",
     description: "10% off tournaments.",
   },
-  { name: "HobbyCon", logo: "/sponsors/hobbycon.png", url: "https://hobbycon.co.nz/" },
+  {
+    name: "HobbyCon",
+    logo: "/sponsors/hobbycon.png",
+    url: "https://hobbycon.co.nz/",
+  },
   {
     name: "CakesLadders",
     logo: "/sponsors/cakesnladders.png",
@@ -52,7 +56,10 @@ export default function SponsorsPage() {
         <div className="flex w-full max-w-4xl flex-col items-center gap-8">
           <div className="flex flex-wrap items-center justify-center gap-12">
             {topSponsors.map((sponsor) => (
-              <div key={sponsor.name} className="flex w-64 flex-col items-center gap-2">
+              <div
+                key={sponsor.name}
+                className="flex w-64 flex-col items-center gap-2"
+              >
                 <Link
                   href={sponsor.url}
                   target="_blank"
@@ -76,7 +83,10 @@ export default function SponsorsPage() {
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12">
             {bottomSponsors.map((sponsor) => (
-              <div key={sponsor.name} className="flex w-64 flex-col items-center gap-2">
+              <div
+                key={sponsor.name}
+                className="flex w-64 flex-col items-center gap-2"
+              >
                 <Link
                   href={sponsor.url}
                   target="_blank"
