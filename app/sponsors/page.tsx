@@ -26,6 +26,7 @@ const sponsors = [
     url: "https://www.aucklandchessacademy.com/",
   },
   { name: "HobbyCon", logo: "/sponsors/hobbycon.png", url: "https://hobbycon.co.nz/" },
+  { name: "CakesLadders", logo: "/sponsors/cakesnladders.png", url: "https://cakesnladders.co.nz/"}
 ];
 
 const topSponsors = sponsors.slice(0, 3);
