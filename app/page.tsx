@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card } from "./components/Card";
 import { CalendarPicker } from "./components/CalendarPicker";
 import { Hero } from "./components/Hero";
+import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
 import { events } from "../src/content/events";
 
@@ -116,6 +117,14 @@ export default function Home() {
             </Card>
           ))}
         </div>
+      </Section>
+
+      <Section
+        eyebrow="Daily Challenge"
+        title="Sharpen your tactics"
+        description="Test your skills with today's puzzle from Chess.com. New puzzle every day."
+      >
+        <PuzzleWidget />
       </Section>
 
       <Section
