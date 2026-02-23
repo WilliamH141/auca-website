@@ -35,6 +35,7 @@ export function PuzzleWidget() {
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
   const [legalMoves, setLegalMoves] = useState<string[]>([]);
   const [revealing, setRevealing] = useState(false);
+  const [playerColor, setPlayerColor] = useState<"white" | "black">("white");
 
   useEffect(() => {
     fetchPuzzle();
@@ -68,6 +69,7 @@ export function PuzzleWidget() {
 
       setSolutionMoves(solution);
       setGame(newGame);
+      setPlayerColor(newGame.turn() === "w" ? "white" : "black");
       setMoveIndex(0);
       setSolved(false);
       setShowHint(false);
@@ -325,6 +327,7 @@ export function PuzzleWidget() {
             options={{
               position: game.fen(),
               onPieceDrop: onDrop,
+              boardOrientation: playerColor,
               darkSquareStyle: { backgroundColor: "#b58863" },
               lightSquareStyle: { backgroundColor: "#f0d9b5" },
               allowDragging: !solved && !waitingForOpponent && !wrongMove && !revealing,
