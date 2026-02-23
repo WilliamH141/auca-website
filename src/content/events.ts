@@ -37,7 +37,7 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
     title: "Opening Night",
     date: "March 5, 2026",
-    time: "5:00 PM - 8:30 PM",
+    time: "5:30 pm - 8:30 PM",
     location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
       "Join us for the first chess night of the year! Meet the team, play casual games, and kick off the semester together.",
@@ -45,7 +45,7 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
     title: "Weekly Chess Night",
     date: "Every Thursday",
-    time: "5:00 PM - 8:30 PM",
+    time: "5:30 pm - 8:30 PM",
     location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
       "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
