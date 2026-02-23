@@ -90,7 +90,8 @@ export function PuzzleWidget() {
     sourceSquare: string;
     targetSquare: string | null;
   }) => {
-    if (solved || !targetSquare || waitingForOpponent || wrongMove || revealing) return false;
+    if (solved || !targetSquare || waitingForOpponent || wrongMove || revealing)
+      return false;
 
     setSelectedSquare(null);
     setLegalMoves([]);
@@ -330,7 +331,8 @@ export function PuzzleWidget() {
               boardOrientation: playerColor,
               darkSquareStyle: { backgroundColor: "#b58863" },
               lightSquareStyle: { backgroundColor: "#f0d9b5" },
-              allowDragging: !solved && !waitingForOpponent && !wrongMove && !revealing,
+              allowDragging:
+                !solved && !waitingForOpponent && !wrongMove && !revealing,
               onSquareClick: handleSquareClick,
               squareStyles: {
                 ...(selectedSquare

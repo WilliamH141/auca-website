@@ -89,9 +89,9 @@ export default function AboutPage() {
               >
                 NZ Chess Federation
               </Link>
-              , the national governing body for chess. If you're interested in an
-              official rating, national tournaments, or connecting with the wider
-              NZ chess community, Chess NZ is a great place to start.
+              , the national governing body for chess. If you're interested in
+              an official rating, national tournaments, or connecting with the
+              wider NZ chess community, Chess NZ is a great place to start.
             </p>
           </div>
           <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
@@ -116,8 +116,8 @@ export default function AboutPage() {
               >
                 Chess.com
               </Link>
-              . Join our teams for online tournaments, practice games, and to stay
-              connected between in-person sessions.
+              . Join our teams for online tournaments, practice games, and to
+              stay connected between in-person sessions.
             </p>
           </div>
         </div>

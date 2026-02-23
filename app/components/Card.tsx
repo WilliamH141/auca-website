@@ -22,7 +22,9 @@ export function Card({ title, description, icon, meta, children }: CardProps) {
           </span>
         )}
       </div>
-      {description && <p className="flex-1 text-sm text-slate-600">{description}</p>}
+      {description && (
+        <p className="flex-1 text-sm text-slate-600">{description}</p>
+      )}
       {children && <div className="mt-auto space-y-3">{children}</div>}
     </div>
   );
