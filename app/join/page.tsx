@@ -15,7 +15,7 @@ const steps = [
     description:
       "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay in touch.",
     action: {
-      label: "Membership link",
+      label: "Sign up",
       href: "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform",
     },
   },
@@ -23,14 +23,14 @@ const steps = [
     title: "Join Discord",
     description:
       "Get event reminders, find a playing partner, and share games for feedback.",
-    action: { label: "Discord", href: "https://discord.gg/gA7Kudmfa2" },
+    action: { label: "Join Discord", href: "https://discord.gg/gA7Kudmfa2" },
   },
   {
     title: "Follow Instagram",
     description:
       "See photos from tournaments and get quick updates about room changes.",
     action: {
-      label: "Instagram",
+      label: "Follow us",
       href: "https://instagram.com/uoachessassociation",
     },
   },
@@ -39,7 +39,7 @@ const steps = [
     description:
       "Play online games with club members and participate in team tournaments on Lichess.",
     action: {
-      label: "Lichess Team",
+      label: "Join team",
       href: "https://lichess.org/team/auckland-university-chess-association-auca",
     },
   },
@@ -48,7 +48,7 @@ const steps = [
     description:
       "Connect with members on Chess.com for online matches, puzzles, and club events.",
     action: {
-      label: "Chess.com Club",
+      label: "Join club",
       href: "https://www.chess.com/club/auckland-university-chess-association",
     },
   },
@@ -73,7 +73,7 @@ export default function JoinPage() {
                 href={step.action.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold accent-text-strong underline decoration-[color:var(--accent-soft)] underline-offset-4"
+                className="inline-block cursor-pointer rounded-full accent-bg px-6 py-2.5 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
               >
                 {step.action.label}
               </Link>
