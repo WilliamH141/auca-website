@@ -34,6 +34,24 @@ const steps = [
       href: "https://instagram.com/uoachessassociation",
     },
   },
+  {
+    title: "Join our Lichess team",
+    description:
+      "Play online games with club members and participate in team tournaments on Lichess.",
+    action: {
+      label: "Lichess Team",
+      href: "https://lichess.org/team/auckland-university-chess-association-auca",
+    },
+  },
+  {
+    title: "Join our Chess.com club",
+    description:
+      "Connect with members on Chess.com for online matches, puzzles, and club events.",
+    action: {
+      label: "Chess.com Club",
+      href: "https://www.chess.com/club/auckland-university-chess-association",
+    },
+  },
 ];
 
 export default function JoinPage() {

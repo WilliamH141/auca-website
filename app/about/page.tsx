@@ -76,22 +76,50 @@ export default function AboutPage() {
         title="Connected locally and nationally"
         description="We're proud to be part of New Zealand's vibrant chess scene."
       >
-        <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
-          <p className="text-slate-700">
-            AUCA members are encouraged to explore competitive chess through{" "}
-            <Link
-              href="https://newzealandchess.co.nz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold accent-text-strong"
-              style={{ textDecoration: "underline" }}
-            >
-              NZ Chess Federation
-            </Link>
-            , the national governing body for chess. If you're interested in an
-            official rating, national tournaments, or connecting with the wider
-            NZ chess community, Chess NZ is a great place to start.
-          </p>
+        <div className="space-y-4">
+          <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
+            <p className="text-slate-700">
+              AUCA members are encouraged to explore competitive chess through{" "}
+              <Link
+                href="https://newzealandchess.co.nz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold accent-text-strong"
+                style={{ textDecoration: "underline" }}
+              >
+                NZ Chess Federation
+              </Link>
+              , the national governing body for chess. If you're interested in an
+              official rating, national tournaments, or connecting with the wider
+              NZ chess community, Chess NZ is a great place to start.
+            </p>
+          </div>
+          <div className="rounded-2xl border thin-border bg-white/80 p-6 shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
+            <p className="text-slate-700">
+              Play online with fellow AUCA members on{" "}
+              <Link
+                href="https://lichess.org/team/auckland-university-chess-association-auca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold accent-text-strong"
+                style={{ textDecoration: "underline" }}
+              >
+                Lichess
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="https://www.chess.com/club/auckland-university-chess-association"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold accent-text-strong"
+                style={{ textDecoration: "underline" }}
+              >
+                Chess.com
+              </Link>
+              . Join our teams for online tournaments, practice games, and to stay
+              connected between in-person sessions.
+            </p>
+          </div>
         </div>
       </Section>
     </div>
