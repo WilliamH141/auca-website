@@ -18,8 +18,11 @@ export type Event = {
 //    - date: use format "Month Day, Year" (e.g., "March 10, 2026")
 //            OR "Every Weekday" for recurring (e.g., "Every Wednesday")
 //    - time: use format "HH:MM AM/PM - HH:MM AM/PM" (e.g., "6:00 PM - 8:30 PM")
+//            OR "TBD" if time not yet confirmed
 //    - location: room/building name (e.g., "Kate Edger Commons, Level 0")
+//                OR "TBD" if location not yet confirmed
 //    - description: brief 1-2 sentence summary of the event
+//    NOTE: Calendar button will be hidden if time or location is "TBD"
 // 3. Add your new event to the eventData array below
 // 4. Save the file - calendar links will be generated automatically!
 //
@@ -66,11 +69,14 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
 // IMPORTANT!!!!!!!
 export const events: Event[] = eventData.map((event) => ({
   ...event,
-  addToCalendarUrl: generateGoogleCalendarUrl(
-    event.title,
-    event.date,
-    event.time,
-    event.location,
-    event.description,
-  ),
+  addToCalendarUrl:
+    event.time === "TBD" || event.location === "TBD"
+      ? undefined
+      : generateGoogleCalendarUrl(
+          event.title,
+          event.date,
+          event.time,
+          event.location,
+          event.description,
+        ),
 }));

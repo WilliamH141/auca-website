@@ -40,13 +40,15 @@ export default function EventsPage() {
               </svg>
               <span className="whitespace-pre-line">{event.location}</span>
             </div>
-            <CalendarPicker
-              title={event.title}
-              date={event.date}
-              time={event.time}
-              location={event.location}
-              description={event.description}
-            />
+            {event.addToCalendarUrl && (
+              <CalendarPicker
+                title={event.title}
+                date={event.date}
+                time={event.time}
+                location={event.location}
+                description={event.description}
+              />
+            )}
           </Card>
         ))}
       </div>
