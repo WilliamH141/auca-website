@@ -5,7 +5,7 @@ export type Event = {
   date: string;
   time: string;
   location: string;
-  description: string;
+  description?: string;
   addToCalendarUrl?: string;
 };
 
@@ -53,6 +53,34 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
     description:
       "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
   },
+  {
+    title: "Rapid Tournament",
+    date: "April 25, 2026",
+    time: "TBD",
+    location: "TBD",
+    // description: "Fast-paced tournament with prizes and catering. Bring your A-game and compete for glory!",
+  },
+  {
+    title: "Simultaneous Exhibition",
+    date: "May 7, 2026",
+    time: "5:30 PM - 8:30 PM",
+    location: "TBD",
+    // description: "Watch a strong player take on multiple opponents at once! Test your skills in this exciting simul where one player faces many boards simultaneously.",
+  },
+  {
+    title: "ACCC Exchange - Away",
+    date: "May 13, 2026",
+    time: "TBD",
+    location: "TBD",
+    // description: "Visit Auckland Central Chess Club for a friendly match. Play against their members and strengthen ties with the wider chess community.",
+  },
+  {
+    title: "ACCC Exchange - Home",
+    date: "May 21, 2026",
+    time: "5:30 PM - 8:30 PM",
+    location: "TBD",
+    // description: "Host Auckland Central Chess Club at our venue. Welcome their players for an evening of friendly competition and community building.",
+  },
   // EXAMPLE BELOW
   // {
   //   title: "Event Name Here",
@@ -77,6 +105,6 @@ export const events: Event[] = eventData.map((event) => ({
           event.date,
           event.time,
           event.location,
-          event.description,
+          event.description || "",
         ),
 }));

@@ -46,7 +46,7 @@ export default function EventsPage() {
                 date={event.date}
                 time={event.time}
                 location={event.location}
-                description={event.description}
+                description={event.description || ""}
               />
             )}
           </Card>
