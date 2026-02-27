@@ -70,9 +70,9 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
     title: "ACCC Exchange - Away",
     date: "May 13, 2026",
-    time: "TBD",
-    location: "TBD",
-    // description: "Visit Auckland Central Chess Club for a friendly match. Play against their members and strengthen ties with the wider chess community.",
+    time: "6:30 PM - 9:00 PM",
+    location: "Ellen Melville Centre\n2 Freyberg Place, Auckland CBD",
+    description: "Visit Auckland Central Chess Club for a friendly 60+30 match. Play against their members and strengthen ties with the wider chess community.",
   },
   {
     title: "ACCC Exchange - Home",
