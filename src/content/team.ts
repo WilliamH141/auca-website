@@ -49,6 +49,8 @@ export const team: CommitteeMember[] = [
     name: "Lucas Barnett-Harris",
     role: "Events Executive",
     bio: "Helps organise friendly matches and inter-university chess events.",
+    image: "/team/lucas.png",
+
   },
 
   // marketing Executives
@@ -63,11 +65,6 @@ export const team: CommitteeMember[] = [
     role: "Marketing Executive",
     bio: "Designs promotional materials and supports outreach campaigns across campus.",
     image: "team/eden.png",
-  },
-  {
-    name: "Ernest Nel",
-    role: "Marketing Executive",
-    bio: "Manages online presence and helps grow AUCA's community through digital channels.",
   },
 
   // general Executives
@@ -87,6 +84,8 @@ export const team: CommitteeMember[] = [
     name: "Rohit Mudaliar",
     role: "General Executive",
     bio: "Contributes to club activities and supports the committee's broader goals.",
+    image: "/team/rohit.png",
+
   },
   {
     name: "Mason Ward",
