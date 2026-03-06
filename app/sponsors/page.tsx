@@ -39,6 +39,18 @@ const sponsors = [
     description:
       "$1 off per person per hour, 1–5pm Wed–Fri. Membership required.",
   },
+  {
+    name: "Escape Masters",
+    logo: "/sponsors/escapemasters.png",
+    url: "https://www.escapemasters.co.nz/",
+    description:
+      "$2 off student prices at our Auckland CBD branch.",
+  },
+  {
+    name: "Gelato",
+    logo: "/sponsors/gelato.png",
+    url: "https://hausofgelatocafe.co.nz/",
+  },
 ];
 
 const topSponsors = sponsors.slice(0, 3);
