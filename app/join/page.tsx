@@ -73,7 +73,7 @@ export default function JoinPage() {
                 href={step.action.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block cursor-pointer rounded-full accent-bg px-6 py-2.5 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
+                className="inline-block cursor-pointer rounded-full accent-bg px-6 py-2.5 text-sm font-semibold text-white! shadow-sm transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
               >
                 {step.action.label}
               </Link>

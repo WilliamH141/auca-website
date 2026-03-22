@@ -126,7 +126,7 @@ export default function SponsorsPage() {
         {/* become a sponsor button */}
         <Link
           href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
-          className="inline-flex items-center justify-center rounded-full accent-bg px-8 py-4 text-sm font-semibold !text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
+          className="inline-flex items-center justify-center rounded-full accent-bg px-8 py-4 text-sm font-semibold text-white! shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
         >
           Become a Sponsor
         </Link>
@@ -170,7 +170,7 @@ export default function SponsorsPage() {
             Interested in sponsoring AUCA?{" "}
             <Link
               href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
-              className="font-semibold accent-text-strong accent-hover-text"
+              className="font-semibold accent-text-strong"
             >
               Get in touch with us
             </Link>{" "}

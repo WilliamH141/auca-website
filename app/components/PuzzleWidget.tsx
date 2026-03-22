@@ -296,7 +296,7 @@ export function PuzzleWidget() {
     return (
       <div className="flex items-center justify-center rounded-2xl border thin-border bg-white/80 p-12 shadow-sm">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-[color:var(--accent)]"></div>
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-accent"></div>
           <p className="text-sm text-slate-600">Loading puzzle...</p>
         </div>
       </div>
@@ -311,7 +311,7 @@ export function PuzzleWidget() {
         </p>
         <button
           onClick={fetchPuzzle}
-          className="cursor-pointer rounded-full accent-bg px-6 py-2 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
+          className="cursor-pointer rounded-full accent-bg px-6 py-2 text-sm font-semibold text-white! shadow-sm transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
         >
           Try Again
         </button>
@@ -449,7 +449,7 @@ export function PuzzleWidget() {
         ) : (
           <button
             onClick={handleReset}
-            className="cursor-pointer flex items-center gap-2 rounded-full accent-bg px-6 py-2 text-sm font-semibold !text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[color:var(--accent-strong)]"
+            className="cursor-pointer flex items-center gap-2 rounded-full accent-bg px-6 py-2 text-sm font-semibold text-white! shadow-sm transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -473,7 +473,7 @@ export function PuzzleWidget() {
             href={puzzle.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold accent-text-strong accent-hover-text underline decoration-[color:var(--accent-soft)] underline-offset-4"
+            className="text-sm font-semibold accent-text-strong underline decoration-(--accent-soft) underline-offset-4"
           >
             View on Chess.com →
           </a>
