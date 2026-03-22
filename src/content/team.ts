@@ -9,22 +9,22 @@ export const team: CommitteeMember[] = [
   {
     name: "Benjamin Guo",
     role: "President & Events Lead",
-    image: "team/ben.png",
+    image: "/team/ben.png",
   },
   {
     name: "Joshua Little",
     role: "Vice President, Secretary & Engagement Officer",
-    image: "team/josh.png",
+    image: "/team/josh.png",
   },
   {
     name: "Allen Li",
     role: "Vice President & Treasurer",
-    image: "team/allen.png",
+    image: "/team/allen.png",
   },
   {
     name: "Kazmaire Bautista",
     role: "Marketing Lead",
-    image: "team/kaz.png",
+    image: "/team/kaz.png",
   },
 
   // events Executives
@@ -54,14 +54,14 @@ export const team: CommitteeMember[] = [
   {
     name: "Eden Li",
     role: "Marketing Executive",
-    image: "team/eden.png",
+    image: "/team/eden.png",
   },
 
   // general Executives
   {
     name: "William Huang",
     role: "General Executive",
-    image: "team/william.png",
+    image: "/team/william.png",
   },
   {
     name: "Felix Xie",
