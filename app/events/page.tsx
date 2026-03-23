@@ -17,7 +17,7 @@ export default function EventsPage() {
       title="See you at the next session"
       description="All events are free. Times and rooms can shift during the semester—check our socials for updates."
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="flex w-full max-w-4xl flex-col gap-6">
         {events.map((event) => (
           <Card
             key={event.title}
