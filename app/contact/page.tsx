@@ -78,7 +78,7 @@ export default function ContactPage() {
     <Section
       eyebrow="Contact"
       title="Get in touch"
-      description="Reach out via email, Discord, Instagram, or Facebook. We reply quickly during semester."
+      description="Reach out via email, Discord, Instagram, or Facebook. We reply quickly during the semester."
     >
       <div className="flex flex-col items-center gap-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

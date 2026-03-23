@@ -40,7 +40,7 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
     title: "Weekly Chess Night",
     date: "Every Thursday",
-    time: "5:30 pm - 8:30 PM",
+    time: "5:30 PM - 8:30 PM",
     location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
       "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",

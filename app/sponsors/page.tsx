@@ -50,7 +50,7 @@ const sponsors = [
     name: "Gelato",
     logo: "/sponsors/gelato.png",
     url: "https://hausofgelatocafe.co.nz/",
-    description: "15% off for Members"
+    description: "15% off for members.",
   },
 ];
 
