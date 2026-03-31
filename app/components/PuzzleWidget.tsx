@@ -400,9 +400,7 @@ export function PuzzleWidget() {
         {/* Status */}
         {solved && (
           <div className="rounded-lg bg-slate-50 border thin-border px-4 py-3">
-            <p className="text-sm font-semibold text-slate-900">
-              Nice work!
-            </p>
+            <p className="text-sm font-semibold text-slate-900">Nice work!</p>
             <p className="text-xs text-slate-600 mt-1">
               You nailed it. Come back tomorrow for another puzzle.
             </p>

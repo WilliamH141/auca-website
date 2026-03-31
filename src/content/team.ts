@@ -42,7 +42,6 @@ export const team: CommitteeMember[] = [
     name: "Lucas Barnett-Harris",
     role: "Events Executive",
     image: "/team/lucas.png",
-
   },
 
   // marketing Executives
@@ -72,7 +71,6 @@ export const team: CommitteeMember[] = [
     name: "Rohit Mudaliar",
     role: "General Executive",
     image: "/team/rohit.png",
-
   },
   {
     name: "Mason Ward",

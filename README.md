@@ -8,6 +8,7 @@ Official website for the Auckland University Chess Association. Built with Next.
 - Git
 
 Verify installation:
+
 ```bash
 node -v
 npm -v
@@ -38,6 +39,7 @@ Open http://localhost:3000 in your browser. The site will hot-reload on file cha
 Edit `src/content/events.ts` to add or update events. Follow the template provided in the file comments.
 
 **Key notes:**
+
 - Date format: `Month Day, Year` (e.g., "March 5, 2026")
 - Time format: `HH:MM AM/PM - HH:MM AM/PM` (e.g., "5:30 PM - 8:30 PM")
 - Use `TBD` for unconfirmed times or locations (calendar button will be hidden)
@@ -59,6 +61,7 @@ Changes are visible immediately on refresh during development.
 ## Deployment
 
 1. Commit and push changes to GitHub:
+
    ```bash
    git add .
    git commit -m "your commit message"
@@ -100,28 +103,33 @@ public/              # Static images and assets
 ### Multi-line Locations
 
 Use `\n` for line breaks in location strings:
+
 ```typescript
-location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room"
+location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room";
 ```
 
 ### Event Descriptions
 
 Keep descriptions concise (1-2 sentences):
+
 ```typescript
-description: "Join us for the first chess night of the year. Meet the team and play casual games."
+description: "Join us for the first chess night of the year. Meet the team and play casual games.";
 ```
 
 ## Troubleshooting
 
 **Build fails on deploy but works locally?**
+
 - Check for TypeScript errors: `npm run build`
 - Verify all event dates are properly formatted
 
 **Events not showing?**
+
 - Ensure the event date is in the future
 - Check date format matches `Month Day, Year`
 
 **Need to reset?**
+
 ```bash
 npm install
 npm run dev
@@ -134,6 +142,7 @@ For questions or issues, contact the AUCA development team or create an issue on
 ---
 
 Built with [Next.js](https://nextjs.org) · Hosted on [Vercel](https://vercel.com)
+
 - `/about` About
 - `/team` Team
 - `/events` Events
