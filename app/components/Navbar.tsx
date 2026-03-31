@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,6 +20,41 @@ const buttonClass =
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (open) {
+        setIsHidden(false);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      const isScrollingDown = currentScrollY > lastScrollY.current;
+      const hasScrolledPastNavbar = currentScrollY > 80;
+
+      if (isScrollingDown && hasScrolledPastNavbar) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [open]);
 
   const linkClass = (href: string) =>
     `relative text-base font-medium text-slate-700 transition-colors hover:text-[color:var(--accent-strong)] ${
@@ -27,7 +62,11 @@ export function Navbar() {
     } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[color:var(--accent)] after:transition-all after:duration-300 hover:after:w-full`;
 
   return (
-    <header className="sticky top-0 z-40 border-b thin-border bg-[#ebf2fa] backdrop-blur shadow-sm">
+    <header
+      className={`sticky top-0 z-40 border-b thin-border bg-[#ebf2fa] backdrop-blur shadow-sm transition-transform duration-300 ease-out ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-6 md:px-6 lg:px-0">
         <Link href="/" className="flex items-center gap-3">
           <img
@@ -56,7 +95,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/join"
-            className={`${buttonClass} border thin-border accent-bg !text-white shadow-lg shadow-black/10 hover:bg-[color:var(--accent-strong)]`}
+            className={`${buttonClass} border thin-border accent-bg text-white! shadow-lg shadow-black/10 hover:bg-(--accent-strong)`}
           >
             Join
           </Link>
@@ -110,7 +149,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/join"
-                className={`${buttonClass} border thin-border accent-bg !text-white shadow-lg shadow-black/10 hover:bg-[color:var(--accent-strong)]`}
+                className={`${buttonClass} border thin-border accent-bg text-white! shadow-lg shadow-black/10 hover:bg-(--accent-strong)`}
                 onClick={() => setOpen(false)}
               >
                 Join AUCA
