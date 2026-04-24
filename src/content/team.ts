@@ -26,6 +26,11 @@ export const team: CommitteeMember[] = [
     role: "Marketing Lead",
     image: "/team/kaz.png",
   },
+  {
+    name: "Nadia Braganza",
+    role: "Women's Officer",
+    image: "/team/nadia.png",
+  },
 
   // events Executives
   {
