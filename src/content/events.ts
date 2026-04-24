@@ -48,8 +48,8 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
   {
     title: "Rapid Tournament",
     date: "April 25, 2026",
-    time: "9:00 AM - 5:00 PM",
-    location: "Arts & Education Building\nRoom 201-311 · Level 3 Seminar Room",
+    time: "10:00 AM - 4:30 PM",
+    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
     description:
       "A fast-paced rapid tournament with multiple rounds, competitive games, and prizes up for grabs.",
   },
