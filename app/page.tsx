@@ -4,10 +4,10 @@ import { CalendarPicker } from "./components/CalendarPicker";
 import { Hero } from "./components/Hero";
 import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
-import { events } from "../src/content/events";
+import { upcomingEvents } from "../src/content/events";
 
 export default function Home() {
-  const featuredEvents = events.slice(0, 3);
+  const featuredEvents = upcomingEvents.slice(0, 3);
 
   return (
     <div className="space-y-16">
