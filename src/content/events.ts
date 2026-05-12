@@ -46,21 +46,6 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
       "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
   },
   {
-    title: "Rapid Tournament",
-    date: "April 25, 2026",
-    time: "10:00 AM - 4:30 PM",
-    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
-    description:
-      "A fast-paced rapid tournament with multiple rounds, competitive games, and prizes up for grabs.",
-  },
-  {
-    title: "Simultaneous Exhibition",
-    date: "May 7, 2026",
-    time: "5:30 PM - 8:30 PM",
-    location: "TBD",
-    // description: "Watch a strong player take on multiple opponents at once! Test your skills in this exciting simul where one player faces many boards simultaneously.",
-  },
-  {
     title: "ACCC Exchange - Away",
     date: "May 13, 2026",
     time: "6:30 PM - 9:00 PM",
