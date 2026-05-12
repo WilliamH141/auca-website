@@ -46,6 +46,20 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
       "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
   },
   {
+    title: "Rapid Tournament",
+    date: "April 25, 2026",
+    time: "10:00 AM - 4:30 PM",
+    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
+    description:
+      "A fast-paced rapid tournament with multiple rounds, competitive games, and prizes up for grabs.",
+  },
+  {
+    title: "Simultaneous Exhibition",
+    date: "May 7, 2026",
+    time: "5:30 PM - 8:30 PM",
+    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
+  },
+  {
     title: "ACCC Exchange - Away",
     date: "May 13, 2026",
     time: "6:30 PM - 9:00 PM",
@@ -74,6 +88,15 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
 // this automatically generates calendar links for all events above
 // no need to touch this part!
 // IMPORTANT!!!!!!!
+function isEventPast(date: string): boolean {
+  if (date.startsWith("Every")) return false;
+  const parsed = new Date(date);
+  if (isNaN(parsed.getTime())) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return parsed < today;
+}
+
 export const events: Event[] = eventData.map((event) => ({
   ...event,
   addToCalendarUrl:
@@ -87,3 +110,6 @@ export const events: Event[] = eventData.map((event) => ({
           event.description || "",
         ),
 }));
+
+export const upcomingEvents = events.filter((e) => !isEventPast(e.date));
+export const pastEvents = events.filter((e) => isEventPast(e.date)).reverse();
