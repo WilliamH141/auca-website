@@ -5,6 +5,8 @@ import { Section } from "../components/Section";
 import { upcomingEvents, pastEvents } from "../../src/content/events";
 import type { Event } from "../../src/content/events";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Events | AUCA",
   description:

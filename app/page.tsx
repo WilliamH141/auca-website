@@ -6,6 +6,8 @@ import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
 import { upcomingEvents } from "../src/content/events";
 
+export const revalidate = 3600;
+
 export default function Home() {
   const featuredEvents = upcomingEvents.slice(0, 3);
 
@@ -107,13 +109,15 @@ export default function Home() {
                 </svg>
                 <span className="whitespace-pre-line">{event.location}</span>
               </div>
-              <CalendarPicker
-                title={event.title}
-                date={event.date}
-                time={event.time}
-                location={event.location}
-                description={event.description || ""}
-              />
+              {event.addToCalendarUrl && (
+                <CalendarPicker
+                  title={event.title}
+                  date={event.date}
+                  time={event.time}
+                  location={event.location}
+                  description={event.description || ""}
+                />
+              )}
             </Card>
           ))}
         </div>
