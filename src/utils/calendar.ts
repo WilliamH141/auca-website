@@ -119,6 +119,9 @@ function parseEventDateTime(
   return parseTimeToDate(eventDate, time);
 }
 
+// keep event times in nz, not the server's tz (utc on vercel)
+const EVENT_TIME_ZONE = "Pacific/Auckland";
+
 function parseTimeToDate(
   date: Date,
   time: string,
@@ -132,26 +135,75 @@ function parseTimeToDate(
     return null;
   }
 
-  const [_, startHour, startMin, startPeriod, endHour, endMin, endPeriod] =
+  const [, startHour, startMin, startPeriod, endHour, endMin, endPeriod] =
     timeMatch;
 
-  const start = new Date(date);
-  start.setHours(
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+
+  const start = zonedWallTimeToUtc(
+    year,
+    month,
+    day,
     convertTo24Hour(parseInt(startHour), startPeriod),
     parseInt(startMin),
-    0,
-    0,
   );
 
-  const end = new Date(date);
-  end.setHours(
+  const end = zonedWallTimeToUtc(
+    year,
+    month,
+    day,
     convertTo24Hour(parseInt(endHour), endPeriod),
     parseInt(endMin),
-    0,
-    0,
   );
 
   return { start, end };
+}
+
+// wall time -> utc for the zone (handles nz daylight saving)
+function zonedWallTimeToUtc(
+  year: number,
+  monthIndex: number,
+  day: number,
+  hour: number,
+  minute: number,
+  timeZone: string = EVENT_TIME_ZONE,
+): Date {
+  const utcGuess = Date.UTC(year, monthIndex, day, hour, minute, 0);
+  const offset = timeZoneOffsetMs(new Date(utcGuess), timeZone);
+  return new Date(utcGuess - offset);
+}
+
+function timeZoneOffsetMs(instant: Date, timeZone: string): number {
+  const dtf = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  const parts: Record<string, number> = {};
+  for (const part of dtf.formatToParts(instant)) {
+    if (part.type !== "literal") {
+      parts[part.type] = parseInt(part.value, 10);
+    }
+  }
+
+  const asUtc = Date.UTC(
+    parts.year,
+    parts.month - 1,
+    parts.day,
+    parts.hour % 24, // midnight comes back as 24 on some platforms
+    parts.minute,
+    parts.second,
+  );
+
+  return asUtc - instant.getTime();
 }
 
 function convertTo24Hour(hour: number, period: string): number {
