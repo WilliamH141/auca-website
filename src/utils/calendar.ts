@@ -12,7 +12,7 @@ export function generateGoogleCalendarUrl(
     return "#";
   }
 
-  const { start, end } = startDateTime;
+  const { start, end, rrule } = startDateTime;
 
   // google wants dates in YYYYMMDDTHHMMSS format
   const formatDate = (date: Date) => {
@@ -26,6 +26,11 @@ export function generateGoogleCalendarUrl(
     details: description,
     location: location,
   });
+
+  // recurring events (e.g. "Every Thursday") repeat weekly in the calendar
+  if (rrule) {
+    params.set("recur", `RRULE:${rrule}`);
+  }
 
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
@@ -71,7 +76,7 @@ export function generateICSFile(
     return "";
   }
 
-  const { start, end } = startDateTime;
+  const { start, end, rrule } = startDateTime;
 
   const formatDate = (date: Date) => {
     return date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
@@ -84,6 +89,7 @@ export function generateICSFile(
     "BEGIN:VEVENT",
     `DTSTART:${formatDate(start)}`,
     `DTEND:${formatDate(end)}`,
+    ...(rrule ? [`RRULE:${rrule}`] : []),
     `SUMMARY:${title}`,
     `DESCRIPTION:${description}`,
     `LOCATION:${location}`,
@@ -95,17 +101,25 @@ export function generateICSFile(
   return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
 }
 
-function parseEventDateTime(
-  date: string,
-  time: string,
-): { start: Date; end: Date } | null {
+type ParsedEvent = { start: Date; end: Date; rrule?: string };
+
+function parseEventDateTime(date: string, time: string): ParsedEvent | null {
   // handle "every wednesday" type recurring events
   if (date.toLowerCase().includes("every")) {
     // grab the next occurrence of that day
     const dayMatch = date.match(/every\s+(\w+)/i);
     if (dayMatch) {
+      const byDay = weekdayToByDay(dayMatch[1]);
+      if (!byDay) {
+        return null;
+      }
       const nextDate = getNextWeekday(dayMatch[1]);
-      return parseTimeToDate(nextDate, time);
+      const parsed = parseTimeToDate(nextDate, time);
+      if (!parsed) {
+        return null;
+      }
+      // anchor the recurrence to the first occurrence and repeat weekly
+      return { ...parsed, rrule: `FREQ=WEEKLY;BYDAY=${byDay}` };
     }
     return null;
   }
@@ -119,13 +133,24 @@ function parseEventDateTime(
   return parseTimeToDate(eventDate, time);
 }
 
+// "Thursday" -> "TH" (the two-letter day code used in RRULE BYDAY)
+function weekdayToByDay(dayName: string): string | null {
+  const codes: Record<string, string> = {
+    sunday: "SU",
+    monday: "MO",
+    tuesday: "TU",
+    wednesday: "WE",
+    thursday: "TH",
+    friday: "FR",
+    saturday: "SA",
+  };
+  return codes[dayName.toLowerCase()] ?? null;
+}
+
 // keep event times in nz, not the server's tz (utc on vercel)
 const EVENT_TIME_ZONE = "Pacific/Auckland";
 
-function parseTimeToDate(
-  date: Date,
-  time: string,
-): { start: Date; end: Date } | null {
+function parseTimeToDate(date: Date, time: string): ParsedEvent | null {
   // times like "6:00 PM - 8:30 PM"
   const timeMatch = time.match(
     /(\d{1,2}):(\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i,

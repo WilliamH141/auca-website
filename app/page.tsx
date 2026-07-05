@@ -109,7 +109,7 @@ export default function Home() {
                 </svg>
                 <span className="whitespace-pre-line">{event.location}</span>
               </div>
-              {event.addToCalendarUrl && (
+              {event.canAddToCalendar && (
                 <CalendarPicker
                   title={event.title}
                   date={event.date}

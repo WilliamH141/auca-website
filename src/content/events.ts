@@ -1,12 +1,10 @@
-import { generateGoogleCalendarUrl } from "../utils/calendar";
-
 export type Event = {
   title: string;
   date: string;
   time: string;
   location: string;
   description?: string;
-  addToCalendarUrl?: string;
+  canAddToCalendar?: boolean;
 };
 
 // ========================================
@@ -36,7 +34,7 @@ export type Event = {
 // },
 // ========================================
 
-const eventData: Omit<Event, "addToCalendarUrl">[] = [
+const eventData: Omit<Event, "canAddToCalendar">[] = [
   {
     title: "Weekly Chess Night",
     date: "Every Thursday",
@@ -85,7 +83,7 @@ const eventData: Omit<Event, "addToCalendarUrl">[] = [
 ];
 
 // IMPORTANT!!!!!!!
-// this automatically generates calendar links for all events above
+// everything below is derived automatically from the events above.
 // no need to touch this part!
 // IMPORTANT!!!!!!!
 function isEventPast(date: string): boolean {
@@ -99,16 +97,8 @@ function isEventPast(date: string): boolean {
 
 export const events: Event[] = eventData.map((event) => ({
   ...event,
-  addToCalendarUrl:
-    event.time === "TBD" || event.location === "TBD"
-      ? undefined
-      : generateGoogleCalendarUrl(
-          event.title,
-          event.date,
-          event.time,
-          event.location,
-          event.description || "",
-        ),
+  // calendar button is hidden until both time and location are confirmed
+  canAddToCalendar: event.time !== "TBD" && event.location !== "TBD",
 }));
 
 export const upcomingEvents = events.filter((e) => !isEventPast(e.date));
