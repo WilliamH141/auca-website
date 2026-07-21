@@ -37,11 +37,11 @@ export type Event = {
 const eventData: Omit<Event, "canAddToCalendar">[] = [
   {
     title: "Weekly Chess Night",
-    date: "Every Thursday",
+    date: "Every Wednesday",
     time: "5:30 PM - 8:30 PM",
-    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
+    location: "The Conference Centre\nRoom 423-340 · Level 3",
     description:
-      "Drop in every Thursday to play chess, practice openings, and connect with the AUCA community.",
+      "Drop in every Wednesday to play chess, practice openings, and connect with the AUCA community.",
   },
   {
     title: "Rapid Tournament",
