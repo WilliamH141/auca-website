@@ -1,6 +1,7 @@
 const config = {
   plugins: {
-    "@tailwindcss/postcss": {},
+    // pin tailwind's resolve base to this project so it doesn't depend on the dev server's cwd
+    "@tailwindcss/postcss": { base: import.meta.dirname },
   },
 };
 

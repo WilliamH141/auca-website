@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Card } from "../components/Card";
 import { CalendarPicker } from "../components/CalendarPicker";
+import { SignUpButton } from "../components/SignUpButton";
 import { Section } from "../components/Section";
 import { upcomingEvents, pastEvents } from "../../src/content/events";
 import type { Event } from "../../src/content/events";
@@ -36,15 +37,18 @@ function EventCard({ event }: { event: Event }) {
         </svg>
         <span className="whitespace-pre-line">{event.location}</span>
       </div>
-      {event.canAddToCalendar && (
-        <CalendarPicker
-          title={event.title}
-          date={event.date}
-          time={event.time}
-          location={event.location}
-          description={event.description || ""}
-        />
-      )}
+      <div className="flex flex-wrap items-center gap-2">
+        {event.canAddToCalendar && (
+          <CalendarPicker
+            title={event.title}
+            date={event.date}
+            time={event.time}
+            location={event.location}
+            description={event.description || ""}
+          />
+        )}
+        {event.signUpUrl && <SignUpButton href={event.signUpUrl} />}
+      </div>
     </Card>
   );
 }
@@ -71,7 +75,13 @@ export default function EventsPage() {
           </h2>
           {pastEvents.map((event) => (
             <div key={event.title} className="opacity-50">
-              <EventCard event={{ ...event, canAddToCalendar: false }} />
+              <EventCard
+                event={{
+                  ...event,
+                  canAddToCalendar: false,
+                  signUpUrl: undefined,
+                }}
+              />
             </div>
           ))}
         </div>

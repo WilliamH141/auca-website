@@ -4,6 +4,7 @@ export type Event = {
   time: string;
   location: string;
   description?: string;
+  signUpUrl?: string;
   canAddToCalendar?: boolean;
 };
 
@@ -20,6 +21,7 @@ export type Event = {
 //    - location: room/building name (e.g., "Kate Edger Commons, Level 0")
 //                OR "TBD" if location not yet confirmed
 //    - description: brief 1-2 sentence summary of the event
+//    - signUpUrl: (optional) link to a sign up form, shows a "Sign up" button
 //    NOTE: Calendar button will be hidden if time or location is "TBD"
 // 3. Add your new event to the eventData array below
 // 4. Save the file - calendar links will be generated automatically!
@@ -71,6 +73,16 @@ const eventData: Omit<Event, "canAddToCalendar">[] = [
     time: "5:30 PM - 8:30 PM",
     location: "TBD",
     // description: "Host Auckland Central Chess Club at our venue. Welcome their players for an evening of friendly competition and community building.",
+  },
+  {
+    title: "Semester 2 Rapid Tournament",
+    date: "September 19, 2026",
+    time: "10:00 AM - 4:00 PM",
+    location: "Science Centre\nRoom 303-G14 · Ground Floor",
+    description:
+      "7 rounds of 15+5 rapid chess over the day, with a $200 prize pool, catering, and merch. Prizes open to UoA students or anyone who has been to our club before.",
+    signUpUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLSd8jO_Xy2BSOV1mHdxESjv7QMVI-XyqPVpVKRd1Fn1LSDZ34g/viewform?usp=sharing&ouid=111565344027849179311",
   },
   // EXAMPLE BELOW
   // {

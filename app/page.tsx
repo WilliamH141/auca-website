@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "./components/Card";
 import { CalendarPicker } from "./components/CalendarPicker";
+import { SignUpButton } from "./components/SignUpButton";
 import { Hero } from "./components/Hero";
 import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
@@ -109,15 +110,18 @@ export default function Home() {
                 </svg>
                 <span className="whitespace-pre-line">{event.location}</span>
               </div>
-              {event.canAddToCalendar && (
-                <CalendarPicker
-                  title={event.title}
-                  date={event.date}
-                  time={event.time}
-                  location={event.location}
-                  description={event.description || ""}
-                />
-              )}
+              <div className="flex flex-wrap items-center gap-2">
+                {event.canAddToCalendar && (
+                  <CalendarPicker
+                    title={event.title}
+                    date={event.date}
+                    time={event.time}
+                    location={event.location}
+                    description={event.description || ""}
+                  />
+                )}
+                {event.signUpUrl && <SignUpButton href={event.signUpUrl} />}
+              </div>
             </Card>
           ))}
         </div>
