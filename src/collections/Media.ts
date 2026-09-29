@@ -9,8 +9,22 @@ export const Media: CollectionConfig = {
     {
       name: "alt",
       type: "text",
-      required: true,
+      admin: {
+        description: "Short description for screen readers (optional).",
+      },
     },
   ],
-  upload: true,
+  upload: {
+    mimeTypes: ["image/*"],
+    // phone photos can be 10MB+; the site uses this small square version
+    imageSizes: [
+      {
+        name: "square",
+        width: 600,
+        height: 600,
+        position: "centre",
+        formatOptions: { format: "webp", options: { quality: 80 } },
+      },
+    ],
+  },
 };

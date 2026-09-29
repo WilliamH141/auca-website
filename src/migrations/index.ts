@@ -1,5 +1,6 @@
 import * as migration_20260929_034607_initial from './20260929_034607_initial';
 import * as migration_20260929_034702_events from './20260929_034702_events';
+import * as migration_20260929_041527_team from './20260929_041527_team';
 
 export const migrations = [
   {
@@ -10,6 +11,11 @@ export const migrations = [
   {
     up: migration_20260929_034702_events.up,
     down: migration_20260929_034702_events.down,
-    name: '20260929_034702_events'
+    name: '20260929_034702_events',
+  },
+  {
+    up: migration_20260929_041527_team.up,
+    down: migration_20260929_041527_team.down,
+    name: '20260929_041527_team'
   },
 ];

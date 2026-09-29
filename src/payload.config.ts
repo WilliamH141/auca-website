@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 
 import { Events } from "./collections/Events";
 import { Media } from "./collections/Media";
+import { Team } from "./collections/Team";
 import { Users } from "./collections/Users";
 import { migrations } from "./migrations";
 
@@ -21,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Events, Users, Media],
+  collections: [Events, Team, Users, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
@@ -49,8 +50,13 @@ export default buildConfig({
     // Without a token (e.g. local dev) uploads fall back to the local disk.
     vercelBlobStorage({
       enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
-      collections: { media: true },
+      // serve files straight from the Blob CDN instead of through Payload
+      collections: { media: { disablePayloadAccessControl: true } },
       token: process.env.BLOB_READ_WRITE_TOKEN,
+      // upload from the browser; Vercel rejects server uploads over 4.5MB
+      clientUploads: true,
+      // keep the database schema the same with or without a token
+      alwaysInsertFields: true,
     }),
   ],
 });

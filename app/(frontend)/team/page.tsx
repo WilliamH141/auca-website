@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Card } from "../components/Card";
 import { Section } from "../components/Section";
-import { team } from "@/src/content/team";
+import { getTeam } from "@/src/content/team";
 
 export const metadata: Metadata = {
   title: "Team | AUCA",
@@ -9,7 +9,11 @@ export const metadata: Metadata = {
     "Meet the student committee behind the Auckland University Chess Association.",
 };
 
-export default function TeamPage() {
+export const revalidate = 3600;
+
+export default async function TeamPage() {
+  const team = await getTeam();
+
   return (
     <Section
       eyebrow="Committee"
