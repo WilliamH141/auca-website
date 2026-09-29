@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: "Auckland University Chess Association | AUCA",
   description:
     "The official chess club at the University of Auckland. Casual play, tournaments, and community events for all levels.",
-  metadataBase: new URL("https://auca.nz"),
+  metadataBase: new URL("https://aucklandunichess.org"),
 };
 
 export default function RootLayout({

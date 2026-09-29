@@ -4,7 +4,7 @@ Official website for the Auckland University Chess Association. Built with Next.
 
 ## Editing content (no code needed)
 
-Log in at **https://auca.nz/admin** with the club admin account.
+Log in at **https://aucklandunichess.org/admin** with the club admin account.
 
 | What                                            | Where in the admin      |
 | ----------------------------------------------- | ----------------------- |
@@ -51,7 +51,7 @@ Auto-push is turned off, so schema changes must go through migrations:
 2. `npm run payload migrate:create <short-name>`: generates a migration in `src/migrations/`. Check the SQL looks right.
 3. `npm run payload migrate`: applies it to the database.
 4. `npm run generate:types` (and `npm run generate:importmap` if the admin UI changed).
-5. Commit the migration files along with your changes. Vercel also runs any pending migrations when it deploys.
+5. Commit the migration files along with your changes. On Vercel, any pending migrations also run automatically when the production site starts.
 
 ### Project structure
 
