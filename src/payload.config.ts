@@ -6,8 +6,10 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 
+import { Events } from "./collections/Events";
 import { Media } from "./collections/Media";
 import { Users } from "./collections/Users";
+import { migrations } from "./migrations";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -19,13 +21,19 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Events, Users, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: postgresAdapter({
+    // Schema changes go through migrations (src/migrations) rather than dev-mode
+    // auto-push, because local dev and the live site share the same database.
+    push: false,
+    migrationDir: path.resolve(dirname, "migrations"),
+    // Vercel runs pending migrations when the production server starts.
+    prodMigrations: migrations,
     pool: {
       // Neon's URL uses sslmode=require, which pg already treats as verify-full;
       // stating it explicitly silences pg's deprecation warning.
