@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "../components/Section";
+import { getSiteSettings } from "@/src/content/settings";
 
 export const metadata: Metadata = {
   title: "Contact | AUCA",
@@ -8,11 +9,14 @@ export const metadata: Metadata = {
     "Contact the Auckland University Chess Association for collabs, sponsorships, or general questions.",
 };
 
-export default function ContactPage() {
+export const revalidate = 3600;
+
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
   const contacts = [
     {
       name: "Email",
-      href: "mailto:aucklandunichess@gmail.com",
+      href: `mailto:${settings.email}`,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +30,7 @@ export default function ContactPage() {
     },
     {
       name: "Discord",
-      href: "https://discord.gg/gA7Kudmfa2",
+      href: settings.discordUrl,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,7 @@ export default function ContactPage() {
     },
     {
       name: "Instagram",
-      href: "https://instagram.com/uoachessassociation",
+      href: settings.instagramUrl,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +64,7 @@ export default function ContactPage() {
     },
     {
       name: "Facebook",
-      href: "https://www.facebook.com/aucklandunichess/",
+      href: settings.facebookUrl,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +104,7 @@ export default function ContactPage() {
 
         <div className="w-full max-w-2xl space-y-4 rounded-2xl border thin-border bg-white/80 p-8 text-center shadow-sm shadow-black/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
           <p className="text-sm font-semibold text-slate-900">Direct Email</p>
-          <p className="text-base text-slate-700">aucklandunichess@gmail.com</p>
+          <p className="text-base text-slate-700">{settings.email}</p>
           <p className="text-xs text-slate-600">
             We usually reply within a day during semester weeks.
           </p>

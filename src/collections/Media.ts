@@ -25,6 +25,13 @@ export const Media: CollectionConfig = {
         position: "centre",
         formatOptions: { format: "webp", options: { quality: 80 } },
       },
+      // homepage hero photos; the originals are ~3MB PNGs
+      {
+        name: "large",
+        width: 1600,
+        withoutEnlargement: true,
+        formatOptions: { format: "webp", options: { quality: 75 } },
+      },
     ],
   },
 };

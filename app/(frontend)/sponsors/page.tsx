@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "../components/Section";
+import { getSiteSettings } from "@/src/content/settings";
+import { getSponsors } from "@/src/content/sponsors";
 
 export const metadata: Metadata = {
   title: "Sponsors | AUCA",
@@ -8,49 +10,17 @@ export const metadata: Metadata = {
     "Meet the companies supporting the Auckland University Chess Association.",
 };
 
-const sponsors = [
-  {
-    name: "JS",
-    logo: "/sponsors/js.png",
-    url: "https://www.janestreet.com/",
-  },
-  { name: "SIG", logo: "/sponsors/sig.png", url: "https://sig.com/" },
-  {
-    name: "GONGCHA",
-    logo: "/sponsors/gongcha.png",
-    url: "https://www.gongcha.co.nz/web/",
-    description: "Free topping with any drink.",
-  },
-  {
-    name: "AKL Chess Academy",
-    logo: "/sponsors/aklchessacademy.png",
-    url: "https://www.aucklandchessacademy.com/",
-    description: "10% off tournaments.",
-  },
-  {
-    name: "HobbyCon",
-    logo: "/sponsors/hobbycon.png",
-    url: "https://hobbycon.co.nz/",
-  },
-  {
-    name: "CakesLadders",
-    logo: "/sponsors/cakesnladders.png",
-    url: "https://cakesnladders.co.nz/",
-    description:
-      "$1 off per person per hour, 1–5pm Wed–Fri. Membership required.",
-  },
-  {
-    name: "Gelato",
-    logo: "/sponsors/gelato.png",
-    url: "https://hausofgelatocafe.co.nz/",
-    description: "15% off for members.",
-  },
-];
+export const revalidate = 3600;
 
-const topSponsors = sponsors.slice(0, 3);
-const bottomSponsors = sponsors.slice(3);
+export default async function SponsorsPage() {
+  const [sponsors, settings] = await Promise.all([
+    getSponsors(),
+    getSiteSettings(),
+  ]);
+  const topSponsors = sponsors.slice(0, 3);
+  const bottomSponsors = sponsors.slice(3);
+  const sponsorshipMailto = `mailto:${settings.email}?subject=Sponsorship Inquiry for AUCA`;
 
-export default function SponsorsPage() {
   return (
     <Section
       eyebrow="Support"
@@ -79,9 +49,9 @@ export default function SponsorsPage() {
                     className="max-h-32 max-w-full object-contain"
                   />
                 </Link>
-                {sponsor.description && (
+                {sponsor.perk && (
                   <p className="text-center text-xs text-slate-600">
-                    {sponsor.description}
+                    {sponsor.perk}
                   </p>
                 )}
               </div>
@@ -106,9 +76,9 @@ export default function SponsorsPage() {
                     className="max-h-32 max-w-full object-contain"
                   />
                 </Link>
-                {sponsor.description && (
+                {sponsor.perk && (
                   <p className="text-center text-xs text-slate-600">
-                    {sponsor.description}
+                    {sponsor.perk}
                   </p>
                 )}
               </div>
@@ -118,7 +88,7 @@ export default function SponsorsPage() {
 
         {/* become a sponsor button */}
         <Link
-          href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
+          href={sponsorshipMailto}
           className="inline-flex items-center justify-center rounded-full accent-bg px-8 py-4 text-sm font-semibold text-white! shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
         >
           Become a Sponsor
@@ -162,7 +132,7 @@ export default function SponsorsPage() {
           <p className="text-sm text-slate-600 border-t thin-border pt-6">
             Interested in sponsoring AUCA?{" "}
             <Link
-              href="mailto:aucklandunichess@gmail.com?subject=Sponsorship Inquiry for AUCA"
+              href={sponsorshipMailto}
               className="font-semibold accent-text-strong"
             >
               Get in touch with us

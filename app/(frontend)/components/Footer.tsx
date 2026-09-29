@@ -1,19 +1,5 @@
 import Link from "next/link";
-
-const socials = [
-  {
-    label: "Instagram",
-    href: "https://instagram.com/uoachessassociation",
-    icon: "instagram",
-  },
-  { label: "Discord", href: "https://discord.gg/gA7Kudmfa2", icon: "discord" },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/aucklandunichess/",
-    icon: "facebook",
-  },
-  { label: "Email", href: "mailto:aucklandunichess@gmail.com", icon: "email" },
-];
+import { getSiteSettings } from "@/src/content/settings";
 
 function SocialIcon({ type }: { type: string }) {
   switch (type) {
@@ -74,7 +60,15 @@ function SocialIcon({ type }: { type: string }) {
   }
 }
 
-export function Footer() {
+export async function Footer() {
+  const settings = await getSiteSettings();
+  const socials = [
+    { label: "Instagram", href: settings.instagramUrl, icon: "instagram" },
+    { label: "Discord", href: settings.discordUrl, icon: "discord" },
+    { label: "Facebook", href: settings.facebookUrl, icon: "facebook" },
+    { label: "Email", href: `mailto:${settings.email}`, icon: "email" },
+  ];
+
   return (
     <footer className="mt-16 border-t thin-border bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 md:px-6 lg:px-0">

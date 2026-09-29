@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { Section } from "../components/Section";
+import { getFaqs } from "@/src/content/faqs";
 
 export const metadata: Metadata = {
   title: "FAQ | AUCA",
@@ -8,88 +9,11 @@ export const metadata: Metadata = {
     "Frequently asked questions about the Auckland University Chess Association.",
 };
 
-const membershipFormUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform";
+export const revalidate = 3600;
 
-const faqs = [
-  {
-    question: "Is membership free?",
-    answer: (
-      <>
-        Yep—membership and all our events are free. No hidden costs.{" "}
-        <a
-          href={membershipFormUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold accent-text-strong"
-          style={{ textDecoration: "underline" }}
-        >
-          Sign up here
-        </a>
-        .
-      </>
-    ),
-  },
-  {
-    question: "Do I need to be good at chess?",
-    answer:
-      "Not at all! Beginners and experts are equally welcome. We're here to learn and have fun together.",
-  },
-  {
-    question: "When and where do you meet?",
-    answer:
-      "We meet weekly during semester on City Campus. Check Discord or Instagram for the latest times and rooms—they're updated regularly.",
-  },
-  {
-    question: "How do I join?",
-    answer: (
-      <>
-        Fill out our{" "}
-        <a
-          href={membershipFormUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold accent-text-strong"
-          style={{ textDecoration: "underline" }}
-        >
-          membership form
-        </a>{" "}
-        and you're good to go. See you at the next session!
-      </>
-    ),
-  },
-  {
-    question: "What should I bring?",
-    answer:
-      "Just yourself and a willingness to have fun! We've got all the boards, clocks, and sets covered.",
-  },
-  {
-    question: "Can I attend without signing up first?",
-    answer:
-      "Definitely. Come along to any session and check us out—sign up whenever you're ready.",
-  },
-  {
-    question: "Do you run tournaments?",
-    answer:
-      "Yes! We run casual tournaments, blitz nights, and friendlies against other unis. There's something for everyone.",
-  },
-  {
-    question: "How do I get updates?",
-    answer:
-      "Discord and Instagram both work great! Follow both for instant updates and announcements.",
-  },
-  {
-    question: "Can non‑UoA students join?",
-    answer: "Usually, yes—just give us a heads-up in advance.",
-  },
-  {
-    question: "How can I help or volunteer?",
-    answer:
-      "We'd love to have you help! Message the committee if you're interested in assisting with events, marketing, or anything else.",
-  },
-];
+export default async function FaqPage() {
+  const faqs = await getFaqs();
 
-export default function FaqPage() {
   return (
     <Section
       eyebrow="FAQ"
@@ -105,7 +29,10 @@ export default function FaqPage() {
             <h3 className="text-base font-semibold text-slate-900">
               {faq.question}
             </h3>
-            <div className="mt-2 text-sm text-slate-600">{faq.answer}</div>
+            <RichText
+              data={faq.answer}
+              className="mt-2 space-y-2 text-sm text-slate-600 [&_a]:font-semibold [&_a]:text-(--accent-strong) [&_a]:underline"
+            />
           </div>
         ))}
       </div>

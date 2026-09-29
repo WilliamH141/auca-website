@@ -6,11 +6,16 @@ import { Hero } from "./components/Hero";
 import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
 import { getEvents } from "@/src/content/events";
+import { getHeroImages, getSiteSettings } from "@/src/content/settings";
 
 export const revalidate = 3600;
 
 export default async function Home() {
-  const { upcomingEvents } = await getEvents();
+  const [{ upcomingEvents }, heroImages, settings] = await Promise.all([
+    getEvents(),
+    getHeroImages(),
+    getSiteSettings(),
+  ]);
   const featuredEvents = upcomingEvents.slice(0, 3);
 
   return (
@@ -20,13 +25,7 @@ export default async function Home() {
         subtitle="Casual sessions, tournaments, and a friendly community that meets weekly on campus. Whether you are brand new or prepping for your next match, you are welcome."
         primaryCta={{ label: "Join AUCA", href: "/join" }}
         secondaryCta={{ label: "View Events", href: "/events" }}
-        backgroundImages={[
-          "/hero/aucasnapshot.png",
-          "/hero/aucasnapshot2.png",
-          "/hero/aucasnapshot3.png",
-          "/hero/aucasnapshot4.png",
-          "/hero/aucasnapshot5.png",
-        ]}
+        backgroundImages={heroImages}
         imageSwitchInterval={4000}
       />
 
@@ -147,7 +146,7 @@ export default async function Home() {
           <div className="flex flex-col gap-2 text-slate-700 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-lg font-semibold text-slate-900">
-                aucklandunichess@gmail.com
+                {settings.email}
               </p>
               <p className="text-sm text-slate-600">
                 We usually reply within a day during semester weeks.
@@ -155,7 +154,7 @@ export default async function Home() {
             </div>
             <div className="flex gap-3 text-sm font-medium text-slate-700">
               <Link
-                href="https://discord.gg/gA7Kudmfa2"
+                href={settings.discordUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border thin-border accent-bg-soft px-4 py-2 shadow-sm shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"
@@ -163,7 +162,7 @@ export default async function Home() {
                 Discord
               </Link>
               <Link
-                href="https://instagram.com/uoachessassociation"
+                href={settings.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border thin-border accent-bg-soft px-4 py-2 shadow-sm shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[color:var(--accent)] hover:text-white thin-border-hover"

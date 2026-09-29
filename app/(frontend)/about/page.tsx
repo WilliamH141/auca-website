@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "../components/Card";
 import { Section } from "../components/Section";
+import { getSiteSettings } from "@/src/content/settings";
 
 export const metadata: Metadata = {
   title: "About | AUCA",
@@ -27,7 +28,11 @@ const pillars = [
   },
 ];
 
-export default function AboutPage() {
+export const revalidate = 3600;
+
+export default async function AboutPage() {
+  const settings = await getSiteSettings();
+
   return (
     <div className="space-y-14">
       <Section
@@ -98,7 +103,7 @@ export default function AboutPage() {
             <p className="text-slate-700">
               Play online with fellow AUCA members on{" "}
               <Link
-                href="https://lichess.org/team/auckland-university-chess-association-auca"
+                href={settings.lichessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold accent-text-strong"
@@ -108,7 +113,7 @@ export default function AboutPage() {
               </Link>{" "}
               and{" "}
               <Link
-                href="https://www.chess.com/club/auckland-university-chess-association"
+                href={settings.chessComUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold accent-text-strong"

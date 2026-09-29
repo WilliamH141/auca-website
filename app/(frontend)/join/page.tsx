@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "../components/Card";
 import { Section } from "../components/Section";
+import { getSiteSettings } from "@/src/content/settings";
+import type { SiteSetting } from "@/src/payload-types";
 
 export const metadata: Metadata = {
   title: "Join | AUCA",
@@ -9,21 +11,23 @@ export const metadata: Metadata = {
     "Join the Auckland University Chess Association for casual play, tournaments, and community events.",
 };
 
-const steps = [
+export const revalidate = 3600;
+
+const getSteps = (settings: SiteSetting) => [
   {
     title: "Become a member",
     description:
       "Sign up through the UoA clubs portal. It's free and helps us book rooms and stay in touch.",
     action: {
       label: "Sign up",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSduh6LFhjscLG1kl_cAJOhIl5lIyS7W6NCfrMiiPmu3we5wWw/viewform",
+      href: settings.membershipFormUrl,
     },
   },
   {
     title: "Join Discord",
     description:
       "Get event reminders, find a playing partner, and share games for feedback.",
-    action: { label: "Join Discord", href: "https://discord.gg/gA7Kudmfa2" },
+    action: { label: "Join Discord", href: settings.discordUrl },
   },
   {
     title: "Follow Instagram",
@@ -31,7 +35,7 @@ const steps = [
       "See photos from tournaments and get quick updates about room changes.",
     action: {
       label: "Follow us",
-      href: "https://instagram.com/uoachessassociation",
+      href: settings.instagramUrl,
     },
   },
   {
@@ -40,7 +44,7 @@ const steps = [
       "Play online games with club members and participate in team tournaments on Lichess.",
     action: {
       label: "Join team",
-      href: "https://lichess.org/team/auckland-university-chess-association-auca",
+      href: settings.lichessUrl,
     },
   },
   {
@@ -49,12 +53,15 @@ const steps = [
       "Connect with members on Chess.com for online matches, puzzles, and club events.",
     action: {
       label: "Join club",
-      href: "https://www.chess.com/club/auckland-university-chess-association",
+      href: settings.chessComUrl,
     },
   },
 ];
 
-export default function JoinPage() {
+export default async function JoinPage() {
+  const settings = await getSiteSettings();
+  const steps = getSteps(settings);
+
   return (
     <Section
       eyebrow="Join AUCA"
@@ -86,8 +93,8 @@ export default function JoinPage() {
           Accessibility and support
         </p>
         <p className="mt-2">
-          Questions about joining? Email aucklandunichess@gmail.com or message
-          us on Discord. We're happy to help you get started.
+          Questions about joining? Email {settings.email} or message us on
+          Discord. We're happy to help you get started.
         </p>
       </div>
     </Section>
