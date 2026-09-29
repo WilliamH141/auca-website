@@ -27,7 +27,12 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || "",
+      // Neon's URL uses sslmode=require, which pg already treats as verify-full;
+      // stating it explicitly silences pg's deprecation warning.
+      connectionString: (process.env.DATABASE_URL || "").replace(
+        "sslmode=require",
+        "sslmode=verify-full",
+      ),
     },
   }),
   sharp,
