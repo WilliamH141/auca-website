@@ -1,3 +1,9 @@
+import config from "@payload-config";
+import { getPayload } from "payload";
+
+// Events are edited in the Payload admin at /admin/collections/events.
+// This file turns them into the display format the pages and calendar links use.
+
 export type Event = {
   title: string;
   date: string;
@@ -8,96 +14,14 @@ export type Event = {
   canAddToCalendar?: boolean;
 };
 
-// ========================================
-// HOW TO ADD A NEW EVENT
-// ========================================
-// 1. Copy the event template below
-// 2. Fill in the details:
-//    - title: event name (e.g., "Blitz Tournament")
-//    - date: use format "Month Day, Year" (e.g., "March 10, 2026")
-//            OR "Every Weekday" for recurring (e.g., "Every Wednesday")
-//    - time: use format "HH:MM AM/PM - HH:MM AM/PM" (e.g., "6:00 PM - 8:30 PM")
-//            OR "TBD" if time not yet confirmed
-//    - location: room/building name (e.g., "Kate Edger Commons, Level 0")
-//                OR "TBD" if location not yet confirmed
-//    - description: brief 1-2 sentence summary of the event
-//    - signUpUrl: (optional) link to a sign up form, shows a "Sign up" button
-//    NOTE: Calendar button will be hidden if time or location is "TBD"
-// 3. Add your new event to the eventData array below
-// 4. Save the file - calendar links will be generated automatically!
-//
-// TEMPLATE TO COPY:
-// {
-//   title: "Event Name Here",
-//   date: "Month Day, Year",
-//   time: "6:00 PM - 8:30 PM",
-//   location: "Building Name, Room Number",
-//   description: "Brief description of what happens at this event.",
-// },
-// ========================================
+// dates are stored as timestamps; show them as the calendar day in nz
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "Pacific/Auckland",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
 
-const eventData: Omit<Event, "canAddToCalendar">[] = [
-  {
-    title: "Weekly Chess Night",
-    date: "Every Wednesday",
-    time: "5:30 PM - 8:30 PM",
-    location: "The Conference Centre\nRoom 423-340 · Level 3",
-    description:
-      "Drop in every Wednesday to play chess, practice openings, and connect with the AUCA community.",
-  },
-  {
-    title: "Rapid Tournament",
-    date: "April 25, 2026",
-    time: "10:00 AM - 4:30 PM",
-    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
-    description:
-      "A fast-paced rapid tournament with multiple rounds, competitive games, and prizes up for grabs.",
-  },
-  {
-    title: "Simultaneous Exhibition",
-    date: "May 7, 2026",
-    time: "5:30 PM - 8:30 PM",
-    location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room",
-  },
-  {
-    title: "ACCC Exchange - Away",
-    date: "May 13, 2026",
-    time: "6:30 PM - 9:00 PM",
-    location: "Ellen Melville Centre\n2 Freyberg Place, Auckland CBD",
-    description:
-      "Visit Auckland Central Chess Club for a friendly 60+30 match. Play against their members and strengthen ties with the wider chess community.",
-  },
-  {
-    title: "ACCC Exchange - Home",
-    date: "May 21, 2026",
-    time: "5:30 PM - 8:30 PM",
-    location: "TBD",
-    // description: "Host Auckland Central Chess Club at our venue. Welcome their players for an evening of friendly competition and community building.",
-  },
-  {
-    title: "Semester 2 Rapid Tournament",
-    date: "September 19, 2026",
-    time: "10:00 AM - 4:00 PM",
-    location: "Science Centre\nRoom 303-G14 · Ground Floor",
-    description:
-      "7 rounds of 15+5 rapid chess over the day, with a $200 prize pool, catering, and merch. Prizes open to UoA students or anyone who has been to our club before.",
-    signUpUrl:
-      "https://docs.google.com/forms/d/e/1FAIpQLSd8jO_Xy2BSOV1mHdxESjv7QMVI-XyqPVpVKRd1Fn1LSDZ34g/viewform?usp=sharing&ouid=111565344027849179311",
-  },
-  // EXAMPLE BELOW
-  // {
-  //   title: "Event Name Here",
-  //   date: "Month Day, Year",
-  //   time: "6:00 PM - 8:30 PM",
-  //   location: "Building Name, Room Number",
-  //   description: "Brief description of what happens at this event.",
-  // },
-];
-
-// IMPORTANT!!!!!!!
-// everything below is derived automatically from the events above.
-// no need to touch this part!
-// IMPORTANT!!!!!!!
 function isEventPast(date: string): boolean {
   if (date.startsWith("Every")) return false;
   const parsed = new Date(date);
@@ -107,11 +31,39 @@ function isEventPast(date: string): boolean {
   return parsed < today;
 }
 
-export const events: Event[] = eventData.map((event) => ({
-  ...event,
-  // calendar button is hidden until both time and location are confirmed
-  canAddToCalendar: event.time !== "TBD" && event.location !== "TBD",
-}));
+export async function getEvents() {
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "events",
+    pagination: false,
+    sort: "date",
+  });
 
-export const upcomingEvents = events.filter((e) => !isEventPast(e.date));
-export const pastEvents = events.filter((e) => isEventPast(e.date)).reverse();
+  const events: Event[] = docs
+    // weekly events first, then one-off events in date order
+    .sort(
+      (a, b) => Number(a.schedule === "once") - Number(b.schedule === "once"),
+    )
+    .map((doc) => {
+      const time = doc.time?.trim() || "TBD";
+      const location = doc.location?.trim() || "TBD";
+      return {
+        title: doc.title,
+        date:
+          doc.schedule === "weekly"
+            ? `Every ${doc.weekday}`
+            : dateFormatter.format(new Date(doc.date!)),
+        time,
+        location,
+        description: doc.description || undefined,
+        signUpUrl: doc.signUpUrl || undefined,
+        // calendar button is hidden until both time and location are confirmed
+        canAddToCalendar: time !== "TBD" && location !== "TBD",
+      };
+    });
+
+  return {
+    upcomingEvents: events.filter((e) => !isEventPast(e.date)),
+    pastEvents: events.filter((e) => isEventPast(e.date)).reverse(),
+  };
+}

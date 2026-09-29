@@ -1,156 +1,74 @@
 # AUCA Website
 
-Official website for the Auckland University Chess Association. Built with Next.js and deployed on Vercel.
+Official website for the Auckland University Chess Association. Built with Next.js and [Payload CMS](https://payloadcms.com), deployed on Vercel.
 
-## Prerequisites
+## Editing content (no code needed)
 
-- Node.js v18+ ([download here](https://nodejs.org))
-- Git
+Log in at **https://auca.nz/admin** with the club admin account.
 
-Verify installation:
+| What                                            | Where in the admin      |
+| ----------------------------------------------- | ----------------------- |
+| Events (incl. the weekly chess night location)  | Collections → Events    |
+| Committee members and photos                    | Collections → Team      |
+| Sponsors, logos and member perks                | Collections → Sponsors  |
+| FAQ                                             | Collections → FAQ       |
+| Rotating homepage photos                        | Globals → Homepage      |
+| Club email, membership form, social media links | Globals → Site Settings |
 
-```bash
-node -v
-npm -v
-```
+Changes appear on the site as soon as you hit **Save**.
 
-## Getting Started
+**Tips**
 
-### First-time setup
+- **Events:** pick _One-off_ (with a date) or _Repeats weekly_ (with a day). Leave time or location blank to show "TBD" and hide the calendar button. Past one-off events move to "Past Events" automatically.
+- **Ordering:** drag rows in the Team, Sponsors and FAQ lists to reorder them on the site. The first 3 sponsors go in the top row.
+- **Photos:** upload any size; they are resized automatically.
+- **New membership form each year?** Update it once in Site Settings and every Sign up button changes.
+
+## Development
+
+### Setup
+
+Requires Node.js 20+.
 
 ```bash
 git clone https://github.com/WilliamH141/auca-website.git
 cd auca-website
 npm install
-```
-
-### Development
-
-```bash
+npx vercel link          # log in with the club Vercel account, pick "aucklandunichess"
+npx vercel env pull .env # downloads DATABASE_URL, BLOB_READ_WRITE_TOKEN, PAYLOAD_SECRET
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser. The site will hot-reload on file changes.
+Open http://localhost:3000 (site) and http://localhost:3000/admin (CMS). See `.env.example` for what each variable is.
 
-## Content Management
+> ⚠️ Local development uses the **live database**. Anything you create or delete in your local admin changes the real site.
 
-### Events
+### Changing the data structure (adding/changing fields or collections)
 
-Edit `src/content/events.ts` to add or update events. Follow the template provided in the file comments.
+Auto-push is turned off, so schema changes must go through migrations:
 
-**Key notes:**
+1. Edit the config in `src/collections/` or `src/globals/`.
+2. `npm run payload migrate:create <short-name>`: generates a migration in `src/migrations/`. Check the SQL looks right.
+3. `npm run payload migrate`: applies it to the database.
+4. `npm run generate:types` (and `npm run generate:importmap` if the admin UI changed).
+5. Commit the migration files along with your changes. Vercel also runs any pending migrations when it deploys.
 
-- Date format: `Month Day, Year` (e.g., "March 5, 2026")
-- Time format: `HH:MM AM/PM - HH:MM AM/PM` (e.g., "5:30 PM - 8:30 PM")
-- Use `TBD` for unconfirmed times or locations (calendar button will be hidden)
-- For recurring events, use format like `Every Thursday`
-- Descriptions are optional—omit for shorter event cards
-
-### Team Members
-
-Edit `src/content/team.ts` following the same template pattern.
-
-### Other Content
-
-- **Styling & Layout:** Check component files in `app/components/`
-- **Images:** Place in `public/` directory (create subdirectories as needed)
-- **Navigation:** Update links in `app/components/Footer.tsx`
-
-Changes are visible immediately on refresh during development.
-
-## Deployment
-
-1. Commit and push changes to GitHub:
-
-   ```bash
-   git add .
-   git commit -m "your commit message"
-   git push
-   ```
-
-2. Vercel automatically deploys on push to `main`
-
-3. Check deployment status at [vercel.com](https://vercel.com)
-
-## Project Structure
+### Project structure
 
 ```
 app/
-├── components/        # Reusable React components
-├── (pages)/          # Page routes
-└── globals.css       # Global styles
+├── (frontend)/       # The public website (pages + components)
+└── (payload)/        # Payload admin panel and API (generated, don't edit)
 
 src/
-├── content/          # Data files (events, team)
-└── utils/            # Helper functions
-
-public/              # Static images and assets
+├── collections/      # CMS collections: Events, Team, Sponsors, FAQ, Media, Users
+├── globals/          # CMS globals: Homepage, Site Settings
+├── content/          # Functions the pages use to read CMS data
+├── migrations/       # Database migrations
+├── utils/            # Helpers (calendar links)
+└── payload.config.ts # Payload setup (Postgres on Neon, images on Vercel Blob)
 ```
 
-## Pages
+### Deployment
 
-- `/` – Homepage with upcoming events and club overview
-- `/about` – About AUCA and our values
-- `/events` – Full events calendar
-- `/join` – Membership and joining instructions
-- `/team` – Club leadership and team info
-- `/sponsors` – Sponsor logos and information
-- `/faq` – Frequently asked questions
-- `/contact` – Contact information
-
-## Formatting Guide
-
-### Multi-line Locations
-
-Use `\n` for line breaks in location strings:
-
-```typescript
-location: "Arts & Education Building\nRoom 201-342 · Level 3 Seminar Room";
-```
-
-### Event Descriptions
-
-Keep descriptions concise (1-2 sentences):
-
-```typescript
-description: "Join us for the first chess night of the year. Meet the team and play casual games.";
-```
-
-## Troubleshooting
-
-**Build fails on deploy but works locally?**
-
-- Check for TypeScript errors: `npm run build`
-- Verify all event dates are properly formatted
-
-**Events not showing?**
-
-- Ensure the event date is in the future
-- Check date format matches `Month Day, Year`
-
-**Need to reset?**
-
-```bash
-npm install
-npm run dev
-```
-
-## Support
-
-For questions or issues, contact the AUCA development team or create an issue on GitHub.
-
----
-
-Built with [Next.js](https://nextjs.org) · Hosted on [Vercel](https://vercel.com)
-
-- `/about` About
-- `/team` Team
-- `/events` Events
-- `/join` Join
-- `/contact` Contact
-
-## Troubleshooting
-
-- Check Node.js: `node -v`
-- Restart the terminal and try again
-- Ask the dev team
+Push to `main` and Vercel deploys automatically. Pushing any other branch creates a preview deployment.
