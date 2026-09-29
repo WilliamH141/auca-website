@@ -5,7 +5,7 @@ import { SignUpButton } from "./components/SignUpButton";
 import { Hero } from "./components/Hero";
 import { PuzzleWidget } from "./components/PuzzleWidget";
 import { Section } from "./components/Section";
-import { upcomingEvents } from "../src/content/events";
+import { upcomingEvents } from "@/src/content/events";
 
 export const revalidate = 3600;
 

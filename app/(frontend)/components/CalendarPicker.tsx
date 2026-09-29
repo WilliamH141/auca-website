@@ -5,7 +5,7 @@ import {
   generateGoogleCalendarUrl,
   generateOutlookCalendarUrl,
   generateICSFile,
-} from "../../src/utils/calendar";
+} from "@/src/utils/calendar";
 
 type CalendarPickerProps = {
   title: string;

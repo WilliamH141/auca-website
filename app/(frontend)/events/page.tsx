@@ -3,8 +3,8 @@ import { Card } from "../components/Card";
 import { CalendarPicker } from "../components/CalendarPicker";
 import { SignUpButton } from "../components/SignUpButton";
 import { Section } from "../components/Section";
-import { upcomingEvents, pastEvents } from "../../src/content/events";
-import type { Event } from "../../src/content/events";
+import { upcomingEvents, pastEvents } from "@/src/content/events";
+import type { Event } from "@/src/content/events";
 
 export const revalidate = 3600;
 

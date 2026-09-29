@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Card } from "../components/Card";
 import { Section } from "../components/Section";
-import { team } from "../../src/content/team";
+import { team } from "@/src/content/team";
 
 export const metadata: Metadata = {
   title: "Team | AUCA",
